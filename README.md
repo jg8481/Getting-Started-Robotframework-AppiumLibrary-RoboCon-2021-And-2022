@@ -36,7 +36,13 @@ Set up an `.env` file using the provided `template.env` file.
 
 ## Workshop Examples
 
-There will be presentation slides explaining the following in more detail and I will assist everyone with running them.
+There will be presentation slides explaining the following in more detail and I will assist everyone with running them. The examples will automate the following apps.
+- https://github.com/wikimedia/wikipedia-ios
+- https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk
+
+If the BrowserStack WikipediaSample.apk link stops working you can try these links.
+- https://github.com/hariprasadms/sample-applications/blob/master/WikipediaSample.apk
+- https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=wikipedia
 
 1. Workshop-Part-One: Simple automation workflows for IOS apps and automation workflows for Android apps + adb shell.
 ```
