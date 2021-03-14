@@ -12,9 +12,6 @@ malformed*.txt
 _pycache_
 *_pycache_
 nohup.*
-*.jpg
-*.png
-*.mp4
 *.DS_Store
 *geckodriver.log
 venv/
