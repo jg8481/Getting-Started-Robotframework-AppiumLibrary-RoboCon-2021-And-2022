@@ -99,7 +99,7 @@ The Workshop Examples use a lot of Bash scripting for setting up Appium and runn
 - The Appium development team
 - The Graphwalker development team
 - The thought-leaders who inspired me to learn model-based testing
-- The thought-leaders in Rapid Software Testing Methodology
+- The thought-leaders of Rapid Software Testing Methodology
 - The entire Robot Framework community and its contributors
 
 Their contributions to the testing community helped me a lot with this workshop and my day-to-day work.
