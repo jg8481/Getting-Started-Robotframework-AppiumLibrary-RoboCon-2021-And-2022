@@ -242,6 +242,7 @@ if [ "$1" == "All-Appium-Tests-Teardown" ]; then
   pgrep node | xargs kill > /dev/null 2>&1
   pgrep xcode | xargs kill > /dev/null 2>&1
   pgrep appium | xargs kill > /dev/null 2>&1
+  pgrep chromedriver | xargs kill > /dev/null 2>&1
   pgrep emulator | xargs kill > /dev/null 2>&1
   pgrep adb | xargs kill > /dev/null 2>&1
   echo "Stopping Appium Server One on PID $APPIUM_SERVER_PID1"
