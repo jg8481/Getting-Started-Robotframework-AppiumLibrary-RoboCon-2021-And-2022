@@ -20,7 +20,7 @@ The following are the basic technical requirements to run the examples during th
 - Robot Framework and Robotframework-AppiumLibrary -> https://robotframework.org
 - PaBot (this workshop was created using version 1.10.1) -> https://github.com/mkorpela/pabot
 - Charles Proxy -> https://www.charlesproxy.com/documentation/proxying
-- Graphwalker -> https://github.com/GraphWalker/graphwalker-project
+- Graphwalker, a model-based testing tool -> https://github.com/GraphWalker/graphwalker-project
 - Appium Desktop -> https://github.com/appium/appium-desktop
 - wget -> https://www.gnu.org/software/wget/
 - cURL -> https://curl.se/
