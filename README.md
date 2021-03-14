@@ -88,6 +88,7 @@ The Workshop Examples use a lot of Bash scripting for setting up Appium and runn
 - Michael Bolton
 - Cem Kaner
 - Kristian Karl
+- Harry Robinson
 - Mikko Korpela
 - Bryan Oakley
 - Shiva Prasad Adirala
