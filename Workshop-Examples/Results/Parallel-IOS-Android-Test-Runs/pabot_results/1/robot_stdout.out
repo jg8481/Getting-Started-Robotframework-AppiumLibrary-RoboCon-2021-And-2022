@@ -1,0 +1,21 @@
+==============================================================================
+Appium Run                                                                    
+==============================================================================
+Appium Run.PaBot-IOS-Device-Loop-Runner-Examples :: Simple IOS app examples...
+==============================================================================
+PARALELL IOS APP LOOP TEST - Run the IOS Wikipedia app tests in a ... | PASS |
+------------------------------------------------------------------------------
+Appium Run.PaBot-IOS-Device-Loop-Runner-Examples :: Simple IOS app... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Appium Run.PaBot-IOS-Device-Loop-Runner-Examples :: Simple IOS app examples...
+==============================================================================
+PARALELL IOS APP LOOP TEST - Run the IOS Wikipedia app tests in a ... | PASS |
+------------------------------------------------------------------------------
+Appium Run.PaBot-IOS-Device-Loop-Runner-Examples :: Simple IOS app... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Appium Run                                                            | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs/pabot_results/1/appium-ios-android-monitoring-pabot-test-runs-output.xml

@@ -1,0 +1,1605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210314 13:48:41.450" rpa="false" schemaversion="2">
+<suite id="s1" name="Appium Run">
+<suite id="s1-s1" name="PaBot-IOS-Device-Loop-Runner-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/PaBot-IOS-Device-Loop-Runner-Examples.robot">
+<test id="s1-s1-t1" name="PARALELL IOS APP LOOP TEST - Run the IOS Wikipedia app tests in a loop while recording it and taking screenshots.">
+<kw name="Open Existing Default Installed IOS App" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.685" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:48:41.683" endtime="20210314 13:48:41.686"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.688" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:48:41.686" endtime="20210314 13:48:41.688"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.690" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:48:41.688" endtime="20210314 13:48:41.690"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.690" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:48:41.690" endtime="20210314 13:48:41.691"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.691" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:48:41.691" endtime="20210314 13:48:41.691"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.692" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:48:41.691" endtime="20210314 13:48:41.692"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:48:41.693" endtime="20210314 13:48:50.604"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:41.692" endtime="20210314 13:48:50.604"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:48:41.682" endtime="20210314 13:48:50.604"/>
+</kw>
+<kw name="Run IOS Wikipedia App Test Steps In A Loop">
+<arg>${TEST_LOOP_ITERATIONS}</arg>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Repeat Keyword</arg>
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Run IOS Wikipedia App Test Steps In A Sequence</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Run IOS Wikipedia App Test Steps In A Sequence</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20210314 13:48:50.606" level="INFO">Repeating keyword, round 1/2.</msg>
+<kw name="Run IOS Wikipedia App Test Steps In A Sequence">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:52.608" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:50.607" endtime="20210314 13:48:52.608"/>
+</kw>
+<kw name="Install Wikipedia App On IOS Device Then Open It">
+<kw name="Open Existing Default Installed IOS App">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:52.609" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:48:52.609" endtime="20210314 13:48:52.609"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:52.610" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:48:52.609" endtime="20210314 13:48:52.610"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:52.610" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:48:52.610" endtime="20210314 13:48:52.610"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:52.610" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:48:52.610" endtime="20210314 13:48:52.610"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:52.611" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:48:52.611" endtime="20210314 13:48:52.611"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:52.612" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:48:52.611" endtime="20210314 13:48:52.612"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:48:52.613" endtime="20210314 13:49:01.304"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.612" endtime="20210314 13:49:01.305"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:48:52.608" endtime="20210314 13:49:01.305"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Next</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:01.305" endtime="20210314 13:49:01.539"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:01.732" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:01.540" endtime="20210314 13:49:01.732"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:03.733" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:01.732" endtime="20210314 13:49:03.734"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.608" endtime="20210314 13:49:03.735"/>
+</kw>
+<kw name="Switch To Landscape Back To Portrait Tap Next Button">
+<kw name="Check Landscape Mode Take Screenshot Then Go Back To Portrait Mode" library="Appium-Mobile-Resources">
+<kw name="Landscape" library="AppiumLibrary">
+<doc>Set the device orientation to LANDSCAPE</doc>
+<status status="PASS" starttime="20210314 13:49:03.736" endtime="20210314 13:49:04.375"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:08.377" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:04.376" endtime="20210314 13:49:08.377"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:08.646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:08.378" endtime="20210314 13:49:08.646"/>
+</kw>
+<kw name="Portrait" library="AppiumLibrary">
+<doc>Set the device orientation to PORTRAIT</doc>
+<status status="PASS" starttime="20210314 13:49:08.646" endtime="20210314 13:49:09.275"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:11.278" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:09.276" endtime="20210314 13:49:11.279"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:03.736" endtime="20210314 13:49:11.279"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:11.285" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:49:11.279" endtime="20210314 13:49:11.938"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:13.940" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:11.938" endtime="20210314 13:49:13.940"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:14.110" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:13.940" endtime="20210314 13:49:14.110"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:03.735" endtime="20210314 13:49:14.110"/>
+</kw>
+<kw name="Tap Next Button On Second Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:14.113" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:49:14.111" endtime="20210314 13:49:14.801"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:16.802" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:14.801" endtime="20210314 13:49:16.802"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:16.966" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:16.803" endtime="20210314 13:49:16.966"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:14.111" endtime="20210314 13:49:16.966"/>
+</kw>
+<kw name="Tap Next Button On Third Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:16.969" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:49:16.967" endtime="20210314 13:49:17.672"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:19.673" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:17.672" endtime="20210314 13:49:19.673"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:19.870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:19.673" endtime="20210314 13:49:19.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.967" endtime="20210314 13:49:19.870"/>
+</kw>
+<kw name="Tap Get Started Button On Last Wikipedia Setup Screen">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:21.872" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:19.871" endtime="20210314 13:49:21.872"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Get started"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:21.875" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Get started"]'.</msg>
+<status status="PASS" starttime="20210314 13:49:21.872" endtime="20210314 13:49:23.109"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:25.110" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:23.109" endtime="20210314 13:49:25.111"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Search</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:25.111" endtime="20210314 13:49:32.078"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:34.081" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:32.079" endtime="20210314 13:49:34.082"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Wikipedia</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:34.082" endtime="20210314 13:49:37.725"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:39.726" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:37.725" endtime="20210314 13:49:39.726"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:40.151" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:39.726" endtime="20210314 13:49:40.151"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.870" endtime="20210314 13:49:40.151"/>
+</kw>
+<kw name="Tap Search Button Enter First Text Entry Into Search Field">
+<arg>Cat</arg>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>870</arg>
+<arg>1320</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:49:40.154" level="INFO">Clicking on a point (870,1320).</msg>
+<status status="PASS" starttime="20210314 13:49:40.152" endtime="20210314 13:49:40.500"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:40.151" endtime="20210314 13:49:40.501"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:42.502" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:40.501" endtime="20210314 13:49:42.503"/>
+</kw>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>155</arg>
+<arg>125</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:49:42.508" level="INFO">Clicking on a point (155,125).</msg>
+<status status="PASS" starttime="20210314 13:49:42.504" endtime="20210314 13:49:42.927"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:42.503" endtime="20210314 13:49:42.928"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:44.932" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:42.928" endtime="20210314 13:49:44.932"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:49:44.936" level="INFO">Setting text 'Cat' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:49:44.932" endtime="20210314 13:49:45.324"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:47.327" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:45.324" endtime="20210314 13:49:47.328"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:47.328" endtime="20210314 13:49:50.150"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:52.152" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:50.151" endtime="20210314 13:49:52.152"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:52.409" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:52.153" endtime="20210314 13:49:52.409"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:40.151" endtime="20210314 13:49:52.409"/>
+</kw>
+<kw name="Delete Previous Text From Search Field Type In More Text">
+<arg>Dog</arg>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:52.411" level="INFO">Clear text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:49:52.410" endtime="20210314 13:49:53.539"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:49:53.542" level="INFO">Setting text 'Dog' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:49:53.539" endtime="20210314 13:49:54.021"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:56.023" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:54.022" endtime="20210314 13:49:56.024"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:56.025" endtime="20210314 13:49:58.712"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:00.714" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:58.712" endtime="20210314 13:50:00.714"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:00.944" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:00.715" endtime="20210314 13:50:00.944"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:52.409" endtime="20210314 13:50:00.944"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.606" endtime="20210314 13:50:00.944"/>
+</kw>
+<msg timestamp="20210314 13:50:00.944" level="INFO">Repeating keyword, round 2/2.</msg>
+<kw name="Run IOS Wikipedia App Test Steps In A Sequence">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:02.945" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:00.945" endtime="20210314 13:50:02.946"/>
+</kw>
+<kw name="Install Wikipedia App On IOS Device Then Open It">
+<kw name="Open Existing Default Installed IOS App">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:50:02.952" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:50:02.950" endtime="20210314 13:50:02.952"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:50:02.953" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:50:02.953" endtime="20210314 13:50:02.953"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:50:02.954" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:50:02.953" endtime="20210314 13:50:02.954"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:50:02.955" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:50:02.954" endtime="20210314 13:50:02.955"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:50:02.956" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:50:02.955" endtime="20210314 13:50:02.956"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:50:02.956" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:50:02.956" endtime="20210314 13:50:02.956"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:50:02.957" endtime="20210314 13:50:10.735"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:02.956" endtime="20210314 13:50:10.735"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:50:02.948" endtime="20210314 13:50:10.735"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Next</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:50:10.735" endtime="20210314 13:50:10.955"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:11.109" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:10.955" endtime="20210314 13:50:11.110"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:13.112" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:11.110" endtime="20210314 13:50:13.112"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:02.946" endtime="20210314 13:50:13.112"/>
+</kw>
+<kw name="Switch To Landscape Back To Portrait Tap Next Button">
+<kw name="Check Landscape Mode Take Screenshot Then Go Back To Portrait Mode" library="Appium-Mobile-Resources">
+<kw name="Landscape" library="AppiumLibrary">
+<doc>Set the device orientation to LANDSCAPE</doc>
+<status status="PASS" starttime="20210314 13:50:13.114" endtime="20210314 13:50:13.740"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:17.741" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:13.740" endtime="20210314 13:50:17.741"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:18.032" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:17.742" endtime="20210314 13:50:18.032"/>
+</kw>
+<kw name="Portrait" library="AppiumLibrary">
+<doc>Set the device orientation to PORTRAIT</doc>
+<status status="PASS" starttime="20210314 13:50:18.032" endtime="20210314 13:50:18.649"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:20.650" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:18.649" endtime="20210314 13:50:20.651"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:13.113" endtime="20210314 13:50:20.651"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:50:20.655" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:50:20.651" endtime="20210314 13:50:21.207"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:23.208" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:21.207" endtime="20210314 13:50:23.208"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:23.376" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:23.208" endtime="20210314 13:50:23.376"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:13.113" endtime="20210314 13:50:23.377"/>
+</kw>
+<kw name="Tap Next Button On Second Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:50:23.381" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:50:23.377" endtime="20210314 13:50:23.981"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:25.982" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:23.982" endtime="20210314 13:50:25.983"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:26.142" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-12.png"&gt;&lt;img src="appium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:25.983" endtime="20210314 13:50:26.142"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:23.377" endtime="20210314 13:50:26.142"/>
+</kw>
+<kw name="Tap Next Button On Third Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:50:26.145" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:50:26.143" endtime="20210314 13:50:26.761"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:28.762" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:26.761" endtime="20210314 13:50:28.762"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:28.932" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-13.png"&gt;&lt;img src="appium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:28.763" endtime="20210314 13:50:28.932"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:26.143" endtime="20210314 13:50:28.933"/>
+</kw>
+<kw name="Tap Get Started Button On Last Wikipedia Setup Screen">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:30.935" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:28.934" endtime="20210314 13:50:30.936"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Get started"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:50:30.941" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Get started"]'.</msg>
+<status status="PASS" starttime="20210314 13:50:30.936" endtime="20210314 13:50:32.098"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:34.101" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:32.098" endtime="20210314 13:50:34.101"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Search</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:50:34.101" endtime="20210314 13:50:39.497"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:41.498" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:39.497" endtime="20210314 13:50:41.499"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Wikipedia</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:50:41.499" endtime="20210314 13:50:44.727"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:46.728" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:44.727" endtime="20210314 13:50:46.729"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:47.165" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-14.png"&gt;&lt;img src="appium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:46.729" endtime="20210314 13:50:47.165"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:28.933" endtime="20210314 13:50:47.165"/>
+</kw>
+<kw name="Tap Search Button Enter First Text Entry Into Search Field">
+<arg>Cat</arg>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>870</arg>
+<arg>1320</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:50:47.168" level="INFO">Clicking on a point (870,1320).</msg>
+<status status="PASS" starttime="20210314 13:50:47.166" endtime="20210314 13:50:47.493"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:47.166" endtime="20210314 13:50:47.493"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:49.495" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:47.494" endtime="20210314 13:50:49.495"/>
+</kw>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>155</arg>
+<arg>125</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:50:49.501" level="INFO">Clicking on a point (155,125).</msg>
+<status status="PASS" starttime="20210314 13:50:49.496" endtime="20210314 13:50:49.845"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:49.495" endtime="20210314 13:50:49.845"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:51.849" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:49.846" endtime="20210314 13:50:51.849"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:50:51.855" level="INFO">Setting text 'Cat' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:50:51.849" endtime="20210314 13:50:52.232"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:54.241" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:52.233" endtime="20210314 13:50:54.241"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:50:54.242" endtime="20210314 13:50:57.370"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:50:59.371" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:50:57.370" endtime="20210314 13:50:59.371"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:50:59.606" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-15.png"&gt;&lt;img src="appium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:50:59.371" endtime="20210314 13:50:59.607"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:47.165" endtime="20210314 13:50:59.607"/>
+</kw>
+<kw name="Delete Previous Text From Search Field Type In More Text">
+<arg>Dog</arg>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:50:59.610" level="INFO">Clear text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:50:59.608" endtime="20210314 13:51:00.530"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:51:00.532" level="INFO">Setting text 'Dog' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:51:00.530" endtime="20210314 13:51:00.908"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:02.909" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:00.908" endtime="20210314 13:51:02.909"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:51:02.909" endtime="20210314 13:51:05.828"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:07.829" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:05.828" endtime="20210314 13:51:07.829"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:08.089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-16.png"&gt;&lt;img src="appium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:07.830" endtime="20210314 13:51:08.089"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:59.607" endtime="20210314 13:51:08.089"/>
+</kw>
+<status status="PASS" starttime="20210314 13:50:00.944" endtime="20210314 13:51:08.089"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.606" endtime="20210314 13:51:08.089"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.605" endtime="20210314 13:51:08.089"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.605" endtime="20210314 13:51:08.089"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn" type="TEARDOWN">
+<arg>Quit Application</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Quit Application" library="AppiumLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210314 13:51:08.090" endtime="20210314 13:51:09.105"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:08.090" endtime="20210314 13:51:09.105"/>
+</kw>
+<tag>Emulator_IOS_Device</tag>
+<tag>IOS_App</tag>
+<tag>Parallel_Running_Tests</tag>
+<status status="PASS" starttime="20210314 13:48:41.681" endtime="20210314 13:51:09.105"/>
+</test>
+<doc>Simple IOS app examples using AppiumLibrary and PaBot.</doc>
+<status status="PASS" starttime="20210314 13:48:41.476" endtime="20210314 13:51:09.107"/>
+</suite>
+<suite id="s1-s2" name="PaBot-IOS-Device-Loop-Runner-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/PaBot-IOS-Device-Loop-Runner-Examples.robot">
+<test id="s1-s2-t1" name="PARALELL IOS APP LOOP TEST - Run the IOS Wikipedia app tests in a loop while recording it and taking screenshots.">
+<kw name="Open Existing Default Installed IOS App" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:09.118" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:51:09.117" endtime="20210314 13:51:09.118"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:09.120" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:51:09.118" endtime="20210314 13:51:09.120"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:09.121" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:51:09.120" endtime="20210314 13:51:09.121"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:09.122" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:51:09.121" endtime="20210314 13:51:09.122"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:09.122" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:51:09.122" endtime="20210314 13:51:09.122"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:09.122" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:51:09.122" endtime="20210314 13:51:09.122"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:51:09.123" endtime="20210314 13:51:16.910"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:09.122" endtime="20210314 13:51:16.911"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:51:09.116" endtime="20210314 13:51:16.911"/>
+</kw>
+<kw name="Run IOS Wikipedia App Test Steps In A Loop">
+<arg>${TEST_LOOP_ITERATIONS}</arg>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Repeat Keyword</arg>
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Run IOS Wikipedia App Test Steps In A Sequence</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Run IOS Wikipedia App Test Steps In A Sequence</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20210314 13:51:16.915" level="INFO">Repeating keyword, round 1/2.</msg>
+<kw name="Run IOS Wikipedia App Test Steps In A Sequence">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:18.919" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:16.916" endtime="20210314 13:51:18.919"/>
+</kw>
+<kw name="Install Wikipedia App On IOS Device Then Open It">
+<kw name="Open Existing Default Installed IOS App">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:18.924" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:51:18.922" endtime="20210314 13:51:18.924"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:18.924" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:51:18.924" endtime="20210314 13:51:18.925"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:51:18.926" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:51:18.925" endtime="20210314 13:51:18.926"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:18.927" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:51:18.926" endtime="20210314 13:51:18.927"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:18.928" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:51:18.927" endtime="20210314 13:51:18.928"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:51:18.929" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:51:18.928" endtime="20210314 13:51:18.929"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:51:18.930" endtime="20210314 13:51:26.537"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:18.929" endtime="20210314 13:51:26.537"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:51:18.921" endtime="20210314 13:51:26.537"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Next</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:51:26.537" endtime="20210314 13:51:26.722"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:26.876" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-17.png"&gt;&lt;img src="appium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:26.722" endtime="20210314 13:51:26.876"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:28.877" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:26.876" endtime="20210314 13:51:28.878"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:18.920" endtime="20210314 13:51:28.878"/>
+</kw>
+<kw name="Switch To Landscape Back To Portrait Tap Next Button">
+<kw name="Check Landscape Mode Take Screenshot Then Go Back To Portrait Mode" library="Appium-Mobile-Resources">
+<kw name="Landscape" library="AppiumLibrary">
+<doc>Set the device orientation to LANDSCAPE</doc>
+<status status="PASS" starttime="20210314 13:51:28.880" endtime="20210314 13:51:29.508"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:33.509" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:29.509" endtime="20210314 13:51:33.509"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:33.796" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-18.png"&gt;&lt;img src="appium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:33.510" endtime="20210314 13:51:33.796"/>
+</kw>
+<kw name="Portrait" library="AppiumLibrary">
+<doc>Set the device orientation to PORTRAIT</doc>
+<status status="PASS" starttime="20210314 13:51:33.797" endtime="20210314 13:51:34.397"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:36.399" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:34.397" endtime="20210314 13:51:36.399"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:28.879" endtime="20210314 13:51:36.399"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:51:36.404" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:51:36.400" endtime="20210314 13:51:36.942"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:38.943" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:36.942" endtime="20210314 13:51:38.944"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:39.169" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-19.png"&gt;&lt;img src="appium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:38.944" endtime="20210314 13:51:39.169"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:28.878" endtime="20210314 13:51:39.169"/>
+</kw>
+<kw name="Tap Next Button On Second Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:51:39.172" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:51:39.170" endtime="20210314 13:51:39.761"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:41.762" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:39.762" endtime="20210314 13:51:41.763"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:41.937" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-20.png"&gt;&lt;img src="appium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:41.763" endtime="20210314 13:51:41.937"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:39.169" endtime="20210314 13:51:41.938"/>
+</kw>
+<kw name="Tap Next Button On Third Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:51:41.940" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:51:41.938" endtime="20210314 13:51:42.589"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:44.590" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:42.589" endtime="20210314 13:51:44.590"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:51:44.758" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-21.png"&gt;&lt;img src="appium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:51:44.591" endtime="20210314 13:51:44.758"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:41.938" endtime="20210314 13:51:44.758"/>
+</kw>
+<kw name="Tap Get Started Button On Last Wikipedia Setup Screen">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:46.759" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:44.759" endtime="20210314 13:51:46.759"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Get started"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:51:46.765" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Get started"]'.</msg>
+<status status="PASS" starttime="20210314 13:51:46.760" endtime="20210314 13:51:47.999"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:50.000" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:47.999" endtime="20210314 13:51:50.000"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Search</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:51:50.000" endtime="20210314 13:51:55.569"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:51:57.573" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:51:55.570" endtime="20210314 13:51:57.573"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Wikipedia</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:51:57.573" endtime="20210314 13:52:00.876"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:02.877" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:00.876" endtime="20210314 13:52:02.877"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:03.300" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-22.png"&gt;&lt;img src="appium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:02.877" endtime="20210314 13:52:03.300"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:44.758" endtime="20210314 13:52:03.301"/>
+</kw>
+<kw name="Tap Search Button Enter First Text Entry Into Search Field">
+<arg>Cat</arg>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>870</arg>
+<arg>1320</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:52:03.304" level="INFO">Clicking on a point (870,1320).</msg>
+<status status="PASS" starttime="20210314 13:52:03.301" endtime="20210314 13:52:03.639"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:03.301" endtime="20210314 13:52:03.639"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:05.641" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:03.639" endtime="20210314 13:52:05.641"/>
+</kw>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>155</arg>
+<arg>125</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:52:05.645" level="INFO">Clicking on a point (155,125).</msg>
+<status status="PASS" starttime="20210314 13:52:05.642" endtime="20210314 13:52:05.999"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:05.641" endtime="20210314 13:52:06.002"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:08.008" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:06.004" endtime="20210314 13:52:08.008"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:52:08.013" level="INFO">Setting text 'Cat' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:52:08.008" endtime="20210314 13:52:08.534"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:10.536" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:08.534" endtime="20210314 13:52:10.536"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:52:10.536" endtime="20210314 13:52:13.478"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:15.480" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:13.478" endtime="20210314 13:52:15.481"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:15.734" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-23.png"&gt;&lt;img src="appium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:15.481" endtime="20210314 13:52:15.734"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:03.301" endtime="20210314 13:52:15.734"/>
+</kw>
+<kw name="Delete Previous Text From Search Field Type In More Text">
+<arg>Dog</arg>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:52:15.739" level="INFO">Clear text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:52:15.735" endtime="20210314 13:52:16.709"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:52:16.711" level="INFO">Setting text 'Dog' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:52:16.709" endtime="20210314 13:52:17.092"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:19.093" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:17.092" endtime="20210314 13:52:19.093"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:52:19.094" endtime="20210314 13:52:21.930"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:23.932" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:21.930" endtime="20210314 13:52:23.933"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:24.196" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-24.png"&gt;&lt;img src="appium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:23.933" endtime="20210314 13:52:24.197"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:15.735" endtime="20210314 13:52:24.197"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:16.915" endtime="20210314 13:52:24.197"/>
+</kw>
+<msg timestamp="20210314 13:52:24.197" level="INFO">Repeating keyword, round 2/2.</msg>
+<kw name="Run IOS Wikipedia App Test Steps In A Sequence">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:26.199" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:24.197" endtime="20210314 13:52:26.199"/>
+</kw>
+<kw name="Install Wikipedia App On IOS Device Then Open It">
+<kw name="Open Existing Default Installed IOS App">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:52:26.202" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:52:26.201" endtime="20210314 13:52:26.202"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:52:26.203" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:52:26.202" endtime="20210314 13:52:26.203"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<arg>${EXECDIR}//Workshop-Examples//Shared-Resources//%{IOS_APP_NAME}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:52:26.204" level="INFO">${IOS_APP_FILE} = /Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021//Workshop-Examples//Shared-Resources//Wikipedia.app</msg>
+<status status="PASS" starttime="20210314 13:52:26.203" endtime="20210314 13:52:26.205"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:52:26.205" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:52:26.205" endtime="20210314 13:52:26.205"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:52:26.206" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:52:26.205" endtime="20210314 13:52:26.206"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${IOS_APP_FILE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:52:26.206" level="INFO">Length is 135</msg>
+<status status="PASS" starttime="20210314 13:52:26.206" endtime="20210314 13:52:26.207"/>
+</kw>
+<kw name="Set Up New IOS App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${IOS_APP_FILE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>app=${IOS_APP_FILE}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:52:26.207" endtime="20210314 13:52:34.219"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:26.207" endtime="20210314 13:52:34.220"/>
+</kw>
+<timeout value="5 minutes"/>
+<status status="PASS" starttime="20210314 13:52:26.200" endtime="20210314 13:52:34.220"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Next</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:52:34.220" endtime="20210314 13:52:34.435"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:34.599" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-25.png"&gt;&lt;img src="appium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:34.435" endtime="20210314 13:52:34.599"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:36.600" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:34.599" endtime="20210314 13:52:36.600"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:26.199" endtime="20210314 13:52:36.600"/>
+</kw>
+<kw name="Switch To Landscape Back To Portrait Tap Next Button">
+<kw name="Check Landscape Mode Take Screenshot Then Go Back To Portrait Mode" library="Appium-Mobile-Resources">
+<kw name="Landscape" library="AppiumLibrary">
+<doc>Set the device orientation to LANDSCAPE</doc>
+<status status="PASS" starttime="20210314 13:52:36.601" endtime="20210314 13:52:37.218"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:41.219" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:37.218" endtime="20210314 13:52:41.220"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:41.495" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-26.png"&gt;&lt;img src="appium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:41.220" endtime="20210314 13:52:41.495"/>
+</kw>
+<kw name="Portrait" library="AppiumLibrary">
+<doc>Set the device orientation to PORTRAIT</doc>
+<status status="PASS" starttime="20210314 13:52:41.495" endtime="20210314 13:52:42.129"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:44.131" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:42.130" endtime="20210314 13:52:44.131"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:36.601" endtime="20210314 13:52:44.132"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:52:44.137" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:52:44.132" endtime="20210314 13:52:44.813"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:46.817" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:44.814" endtime="20210314 13:52:46.817"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:46.977" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-27.png"&gt;&lt;img src="appium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:46.818" endtime="20210314 13:52:46.977"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:36.600" endtime="20210314 13:52:46.977"/>
+</kw>
+<kw name="Tap Next Button On Second Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:52:46.979" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:52:46.977" endtime="20210314 13:52:47.568"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:49.570" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:47.568" endtime="20210314 13:52:49.570"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:49.786" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-28.png"&gt;&lt;img src="appium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:49.570" endtime="20210314 13:52:49.786"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:46.977" endtime="20210314 13:52:49.786"/>
+</kw>
+<kw name="Tap Next Button On Third Wikipedia Setup Screen">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Next"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:52:49.790" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Next"]'.</msg>
+<status status="PASS" starttime="20210314 13:52:49.787" endtime="20210314 13:52:50.445"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:52.447" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:50.446" endtime="20210314 13:52:52.447"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:52:52.610" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-29.png"&gt;&lt;img src="appium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:52:52.448" endtime="20210314 13:52:52.610"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:49.787" endtime="20210314 13:52:52.610"/>
+</kw>
+<kw name="Tap Get Started Button On Last Wikipedia Setup Screen">
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:54.611" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:52.610" endtime="20210314 13:52:54.611"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//XCUIElementTypeStaticText[@name="Get started"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:52:54.613" level="INFO">Clicking element 'xpath=//XCUIElementTypeStaticText[@name="Get started"]'.</msg>
+<status status="PASS" starttime="20210314 13:52:54.611" endtime="20210314 13:52:55.861"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:52:57.862" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:52:55.861" endtime="20210314 13:52:57.863"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Search</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:52:57.863" endtime="20210314 13:53:03.542"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:05.544" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:03.542" endtime="20210314 13:53:05.544"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Wikipedia</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:53:05.544" endtime="20210314 13:53:09.005"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:11.006" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:09.005" endtime="20210314 13:53:11.006"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:53:11.466" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-30.png"&gt;&lt;img src="appium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:53:11.007" endtime="20210314 13:53:11.466"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:52.610" endtime="20210314 13:53:11.466"/>
+</kw>
+<kw name="Tap Search Button Enter First Text Entry Into Search Field">
+<arg>Cat</arg>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>870</arg>
+<arg>1320</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:53:11.471" level="INFO">Clicking on a point (870,1320).</msg>
+<status status="PASS" starttime="20210314 13:53:11.468" endtime="20210314 13:53:11.822"/>
+</kw>
+<status status="PASS" starttime="20210314 13:53:11.468" endtime="20210314 13:53:11.822"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:13.824" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:11.823" endtime="20210314 13:53:13.824"/>
+</kw>
+<kw name="Tap According To Specific Cordinates" library="Appium-Mobile-Resources">
+<arg>155</arg>
+<arg>125</arg>
+<kw name="Click A Point" library="AppiumLibrary">
+<arg>x=${TAP_COORDINATE1}</arg>
+<arg>y=${TAP_COORDINATE2}</arg>
+<doc>Click on a point</doc>
+<msg timestamp="20210314 13:53:13.829" level="INFO">Clicking on a point (155,125).</msg>
+<status status="PASS" starttime="20210314 13:53:13.826" endtime="20210314 13:53:14.231"/>
+</kw>
+<status status="PASS" starttime="20210314 13:53:13.825" endtime="20210314 13:53:14.231"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:16.232" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:14.231" endtime="20210314 13:53:16.234"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:53:16.238" level="INFO">Setting text 'Cat' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:53:16.234" endtime="20210314 13:53:16.653"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:18.655" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:16.653" endtime="20210314 13:53:18.656"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:53:18.656" endtime="20210314 13:53:21.535"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:23.537" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:21.535" endtime="20210314 13:53:23.537"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:53:23.771" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-31.png"&gt;&lt;img src="appium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:53:23.538" endtime="20210314 13:53:23.772"/>
+</kw>
+<status status="PASS" starttime="20210314 13:53:11.468" endtime="20210314 13:53:23.772"/>
+</kw>
+<kw name="Delete Previous Text From Search Field Type In More Text">
+<arg>Dog</arg>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:53:23.774" level="INFO">Clear text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:53:23.772" endtime="20210314 13:53:24.781"/>
+</kw>
+<kw name="Input Value" library="AppiumLibrary">
+<arg>accessibility_id=Search Wikipedia</arg>
+<arg>${INPUT_VALUE_TEXT}</arg>
+<doc>Sets the given value into text field identified by `locator`. This is an IOS only keyword, input value makes use of set_value</doc>
+<msg timestamp="20210314 13:53:24.783" level="INFO">Setting text 'Dog' into text field 'accessibility_id=Search Wikipedia'</msg>
+<status status="PASS" starttime="20210314 13:53:24.781" endtime="20210314 13:53:25.158"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:27.160" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:25.158" endtime="20210314 13:53:27.160"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${INPUT_VALUE_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:53:27.160" endtime="20210314 13:53:30.019"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:53:32.021" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:53:30.019" endtime="20210314 13:53:32.021"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:53:32.266" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-32.png"&gt;&lt;img src="appium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:53:32.022" endtime="20210314 13:53:32.266"/>
+</kw>
+<status status="PASS" starttime="20210314 13:53:23.772" endtime="20210314 13:53:32.266"/>
+</kw>
+<status status="PASS" starttime="20210314 13:52:24.197" endtime="20210314 13:53:32.266"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:16.913" endtime="20210314 13:53:32.266"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:16.912" endtime="20210314 13:53:32.266"/>
+</kw>
+<status status="PASS" starttime="20210314 13:51:16.911" endtime="20210314 13:53:32.266"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn" type="TEARDOWN">
+<arg>Quit Application</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Quit Application" library="AppiumLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210314 13:53:32.267" endtime="20210314 13:53:33.290"/>
+</kw>
+<status status="PASS" starttime="20210314 13:53:32.266" endtime="20210314 13:53:33.290"/>
+</kw>
+<tag>Emulator_IOS_Device</tag>
+<tag>IOS_App</tag>
+<tag>Parallel_Running_Tests</tag>
+<status status="PASS" starttime="20210314 13:51:09.116" endtime="20210314 13:53:33.290"/>
+</test>
+<doc>Simple IOS app examples using AppiumLibrary and PaBot.</doc>
+<status status="PASS" starttime="20210314 13:51:09.109" endtime="20210314 13:53:33.292"/>
+</suite>
+<status status="PASS" starttime="20210314 13:48:41.452" endtime="20210314 13:53:33.293"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Emulator_IOS_Device</stat>
+<stat pass="2" fail="0" skip="0">IOS_App</stat>
+<stat pass="2" fail="0" skip="0">Parallel_Running_Tests</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Appium Run">Appium Run</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="PaBot-IOS-Device-Loop-Runner-Examples">Appium Run.PaBot-IOS-Device-Loop-Runner-Examples</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="PaBot-IOS-Device-Loop-Runner-Examples">Appium Run.PaBot-IOS-Device-Loop-Runner-Examples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

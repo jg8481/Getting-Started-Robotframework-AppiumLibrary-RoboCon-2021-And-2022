@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210314 13:48:36.343" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Framework Appium Charles Proxy IOS And Android Mobile Browsers Test Run">
+<suite id="s1-s1" name="Charles-Proxy-Android-Device-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/Charles-Proxy-Android-Device-Examples.robot">
+<test id="s1-s1-t1" name="CHARLES PROXY ANDROID CHROME TEST - Go to the OWASP Node Goat home page in an Android mobile browser while Charles Proxy is recording a session, and check the JSON session file.">
+<kw name="Start Charles Proxy For Mobile Browser" type="SETUP">
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.789" endtime="20210314 13:48:36.789"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//original-raw-session-file.chls</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.789" endtime="20210314 13:48:36.789"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.789" endtime="20210314 13:48:36.789"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.789" endtime="20210314 13:48:36.789"/>
+</kw>
+<kw name="Start Charles Proxy In Headless Mode" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.790" endtime="20210314 13:48:36.790"/>
+</kw>
+<kw name="Start Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.790" endtime="20210314 13:48:36.790"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.788" endtime="20210314 13:48:36.790"/>
+</kw>
+<kw name="Open The Chrome Browser In Android After Starting Charles Proxy">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.790" endtime="20210314 13:48:36.790"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>%{DEVICE_NAME_ANDROID1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.790" endtime="20210314 13:48:36.790"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<arg>%{PARALLEL_APPIUM_PORT2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.791" endtime="20210314 13:48:36.791"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.791" endtime="20210314 13:48:36.791"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.791" endtime="20210314 13:48:36.791"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.791" endtime="20210314 13:48:36.791"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Set Up Chrome In Android After Starting Charles Proxy</arg>
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>${APPIUM_PORT}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Set Up Chrome In Android After Starting Charles Proxy" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>${APPIUM_PORT}</arg>
+<kw name="Run Process" library="Process">
+<arg>ps aux | grep Charles</arg>
+<arg>alias=charles_proxy_mac_os_status</arg>
+<arg>shell=True</arg>
+<arg>timeout=20s</arg>
+<arg>on_timeout=continue</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.792" endtime="20210314 13:48:36.792"/>
+</kw>
+<kw name="Get Process Result" library="Process">
+<var>${CHARLES_PROXY_MAC_OS_STATUS}</var>
+<arg>charles_proxy_mac_os_status</arg>
+<arg>stdout=true</arg>
+<doc>Returns the specified `result object` or some of its attributes.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.792" endtime="20210314 13:48:36.792"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${CHARLES_PROXY_MAC_OS_STATUS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.793" endtime="20210314 13:48:36.793"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHARLES_PROXY_MAC_OS_STATUS}</arg>
+<arg>Charles.app</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.793" endtime="20210314 13:48:36.793"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Open Application</arg>
+<arg>${PARALLEL_APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_ANDROID}</arg>
+<arg>deviceName=${DEVICE_NAME_ANDROID}</arg>
+<arg>PORT=${PARALLEL_APPIUM_PORT}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>browserName=Chrome</arg>
+<arg>newCommandTimeout=3600</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${PARALLEL_APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_ANDROID}</arg>
+<arg>deviceName=${DEVICE_NAME_ANDROID}</arg>
+<arg>PORT=${PARALLEL_APPIUM_PORT}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>browserName=Chrome</arg>
+<arg>newCommandTimeout=3600</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.793" endtime="20210314 13:48:36.794"/>
+</kw>
+<status status="NOT RUN" starttime="20210314 13:48:36.793" endtime="20210314 13:48:36.794"/>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>${CHARLES_PROXY_APPIUM_EXAMPLE_URL}</arg>
+<doc>Opens URL in default web browser.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.794" endtime="20210314 13:48:36.794"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.794" endtime="20210314 13:48:36.794"/>
+</kw>
+<timeout value="4 minutes"/>
+<status status="PASS" starttime="20210314 13:48:36.792" endtime="20210314 13:48:36.794"/>
+</kw>
+<status status="NOT RUN" starttime="20210314 13:48:36.791" endtime="20210314 13:48:36.794"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.790" endtime="20210314 13:48:36.794"/>
+</kw>
+<kw name="Download Charles Proxy Session File And Convert It To JSON">
+<kw name="Download Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.795" endtime="20210314 13:48:36.795"/>
+</kw>
+<kw name="Convert Recorded Session File" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.795" endtime="20210314 13:48:36.795"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.794" endtime="20210314 13:48:36.795"/>
+</kw>
+<kw name="Check Charles Proxy JSON Session File Recording">
+<kw name="Run JQ Select Command And Check Results">
+<arg>nodegoat.herokuapp.com</arg>
+<kw name="Run" library="OperatingSystem">
+<arg>cat ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj | jq '.[] | select(.host=="${JQ_SELECT_HOST_VALUE}")' &gt; ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.796" endtime="20210314 13:48:36.796"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${JQ_SELECT_OUTPUT}</var>
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.796" endtime="20210314 13:48:36.796"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.797" endtime="20210314 13:48:36.797"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>${JQ_SELECT_HOST_VALUE}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.797" endtime="20210314 13:48:36.798"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>response</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.798" endtime="20210314 13:48:36.798"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>status</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.798" endtime="20210314 13:48:36.798"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>COMPLETE</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.798" endtime="20210314 13:48:36.799"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.796" endtime="20210314 13:48:36.799"/>
+</kw>
+<kw name="Run JQ Filter Command And Check Results">
+<kw name="Run" library="OperatingSystem">
+<arg>cat ${PATH}/Workshop-Examples/Tests/Workshop-Part-Two/Resources/new-json-session-file.chlsj | jq .[].response.status &gt; ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.799" endtime="20210314 13:48:36.800"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${JQ_FILTER_OUTPUT}</var>
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.800" endtime="20210314 13:48:36.800"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.800" endtime="20210314 13:48:36.800"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>200</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.800" endtime="20210314 13:48:36.800"/>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>500</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.801" endtime="20210314 13:48:36.801"/>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>504</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.801" endtime="20210314 13:48:36.801"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.799" endtime="20210314 13:48:36.801"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.795" endtime="20210314 13:48:36.801"/>
+</kw>
+<kw name="Terminate Charles Proxy Sessions And Clean Up" type="TEARDOWN">
+<kw name="Stop Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.802"/>
+</kw>
+<kw name="Terminate All Charles Proxy Sessions" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.802"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.802"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//original-raw-session-file.chls</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.802"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.803"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.803" endtime="20210314 13:48:36.803"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.802" endtime="20210314 13:48:36.803"/>
+</kw>
+<tag>Android_Chrome</tag>
+<tag>Charles_Proxy</tag>
+<tag>Charles_Proxy_Android</tag>
+<tag>Emulator_Android_Device</tag>
+<status status="PASS" starttime="20210314 13:48:36.788" endtime="20210314 13:48:36.803"/>
+</test>
+<kw name="Close All Applications" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes all open applications.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.804" endtime="20210314 13:48:36.804"/>
+</kw>
+<doc>Simple Android examples using Charles Proxy and AppiumLibrary.</doc>
+<status status="PASS" starttime="20210314 13:48:36.371" endtime="20210314 13:48:36.804"/>
+</suite>
+<suite id="s1-s2" name="Charles-Proxy-IOS-Device-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/Charles-Proxy-IOS-Device-Examples.robot">
+<test id="s1-s2-t1" name="CHARLES PROXY IOS SAFARI TEST - Go to the OWASP Node Goat home page in an IOS mobile browser while Charles Proxy is recording a session, and check the JSON session file.">
+<kw name="Start Charles Proxy For Mobile Browser" type="SETUP">
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//original-raw-session-file.chls</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<kw name="Start Charles Proxy In Headless Mode" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<kw name="Start Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.812" endtime="20210314 13:48:36.812"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.811" endtime="20210314 13:48:36.813"/>
+</kw>
+<kw name="Open The Safari Browser In IOS After Starting Charles Proxy">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.813" endtime="20210314 13:48:36.813"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.813" endtime="20210314 13:48:36.813"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<arg>%{PARALLEL_APPIUM_PORT1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.814"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<arg>%{PARALLEL_APPIUM_WDALOCALPORT1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.814"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.814"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.814"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.814"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.814" endtime="20210314 13:48:36.815"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Set Up Safari In IOS After Starting Charles Proxy</arg>
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${APPIUM_PORT}</arg>
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<arg>${CHARLES_PROXY_APPIUM_EXAMPLE_URL}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Set Up Safari In IOS After Starting Charles Proxy" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${APPIUM_PORT}</arg>
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<arg>${CHARLES_PROXY_APPIUM_EXAMPLE_URL}</arg>
+<kw name="Run Process" library="Process">
+<arg>ps aux | grep Charles</arg>
+<arg>alias=charles_proxy_mac_os_status</arg>
+<arg>shell=True</arg>
+<arg>timeout=20s</arg>
+<arg>on_timeout=continue</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.815" endtime="20210314 13:48:36.815"/>
+</kw>
+<kw name="Get Process Result" library="Process">
+<var>${CHARLES_PROXY_MAC_OS_STATUS}</var>
+<arg>charles_proxy_mac_os_status</arg>
+<arg>stdout=true</arg>
+<doc>Returns the specified `result object` or some of its attributes.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.815" endtime="20210314 13:48:36.815"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${CHARLES_PROXY_MAC_OS_STATUS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.816" endtime="20210314 13:48:36.816"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHARLES_PROXY_MAC_OS_STATUS}</arg>
+<arg>Charles.app</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.816" endtime="20210314 13:48:36.816"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Open Application</arg>
+<arg>${PARALLEL_APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>PORT=${PARALLEL_APPIUM_PORT}</arg>
+<arg>WDALOCALPORT=${PARALLEL_APPIUM_WDALOCALPORT}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<arg>browserName=Safari</arg>
+<arg>bundleid=com.apple.mobilesafari</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${PARALLEL_APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>PORT=${PARALLEL_APPIUM_PORT}</arg>
+<arg>WDALOCALPORT=${PARALLEL_APPIUM_WDALOCALPORT}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<arg>browserName=Safari</arg>
+<arg>bundleid=com.apple.mobilesafari</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.817" endtime="20210314 13:48:36.817"/>
+</kw>
+<status status="NOT RUN" starttime="20210314 13:48:36.816" endtime="20210314 13:48:36.818"/>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>${CHARLES_PROXY_APPIUM_EXAMPLE_URL}</arg>
+<doc>Opens URL in default web browser.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.818" endtime="20210314 13:48:36.818"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.818" endtime="20210314 13:48:36.818"/>
+</kw>
+<timeout value="4 minutes"/>
+<status status="PASS" starttime="20210314 13:48:36.815" endtime="20210314 13:48:36.818"/>
+</kw>
+<status status="NOT RUN" starttime="20210314 13:48:36.815" endtime="20210314 13:48:36.818"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.813" endtime="20210314 13:48:36.818"/>
+</kw>
+<kw name="Download Charles Proxy Session File And Convert It To JSON">
+<kw name="Download Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.819" endtime="20210314 13:48:36.819"/>
+</kw>
+<kw name="Convert Recorded Session File" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.819" endtime="20210314 13:48:36.819"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.818" endtime="20210314 13:48:36.819"/>
+</kw>
+<kw name="Check Charles Proxy JSON Session File Recording">
+<kw name="Run JQ Select Command And Check Results">
+<arg>nodegoat.herokuapp.com</arg>
+<kw name="Run" library="OperatingSystem">
+<arg>cat ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj | jq '.[] | select(.host=="${JQ_SELECT_HOST_VALUE}")' &gt; ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.820" endtime="20210314 13:48:36.820"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${JQ_SELECT_OUTPUT}</var>
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.820" endtime="20210314 13:48:36.820"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.820" endtime="20210314 13:48:36.820"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>${JQ_SELECT_HOST_VALUE}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.820" endtime="20210314 13:48:36.820"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>response</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.820" endtime="20210314 13:48:36.821"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>status</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.821" endtime="20210314 13:48:36.821"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_SELECT_OUTPUT}</arg>
+<arg>COMPLETE</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.821" endtime="20210314 13:48:36.821"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.819" endtime="20210314 13:48:36.821"/>
+</kw>
+<kw name="Run JQ Filter Command And Check Results">
+<kw name="Run" library="OperatingSystem">
+<arg>cat ${PATH}/Workshop-Examples/Tests/Workshop-Part-Two/Resources/new-json-session-file.chlsj | jq .[].response.status &gt; ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.822" endtime="20210314 13:48:36.822"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${JQ_FILTER_OUTPUT}</var>
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.822" endtime="20210314 13:48:36.822"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.822" endtime="20210314 13:48:36.822"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>200</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.822" endtime="20210314 13:48:36.822"/>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>500</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.823" endtime="20210314 13:48:36.823"/>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<arg>${JQ_FILTER_OUTPUT}</arg>
+<arg>504</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.823" endtime="20210314 13:48:36.823"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.821" endtime="20210314 13:48:36.823"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.819" endtime="20210314 13:48:36.823"/>
+</kw>
+<kw name="Terminate Charles Proxy Sessions And Clean Up" type="TEARDOWN">
+<kw name="Stop Charles Proxy Session Recording" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.824" endtime="20210314 13:48:36.824"/>
+</kw>
+<kw name="Terminate All Charles Proxy Sessions" library="CharlesProxyExample">
+<status status="NOT RUN" starttime="20210314 13:48:36.824" endtime="20210314 13:48:36.824"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//new-json-session-file.chlsj</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.824" endtime="20210314 13:48:36.824"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//original-raw-session-file.chls</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.825" endtime="20210314 13:48:36.825"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-select-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.825" endtime="20210314 13:48:36.825"/>
+</kw>
+<kw name="Remove File" library="OperatingSystem">
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//jq-filter-output.txt</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.825" endtime="20210314 13:48:36.825"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:36.823" endtime="20210314 13:48:36.825"/>
+</kw>
+<tag>Charles_Proxy</tag>
+<tag>Charles_Proxy_IOS</tag>
+<tag>IOS_Safari</tag>
+<tag>Simulator_IOS_Device</tag>
+<status status="PASS" starttime="20210314 13:48:36.811" endtime="20210314 13:48:36.825"/>
+</test>
+<kw name="Close All Applications" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes all open applications.</doc>
+<status status="NOT RUN" starttime="20210314 13:48:36.826" endtime="20210314 13:48:36.826"/>
+</kw>
+<doc>Simple IOS examples using Charles Proxy and AppiumLibrary.</doc>
+<status status="PASS" starttime="20210314 13:48:36.804" endtime="20210314 13:48:36.826"/>
+</suite>
+<status status="PASS" starttime="20210314 13:48:36.344" endtime="20210314 13:48:36.827"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Android_Chrome</stat>
+<stat pass="2" fail="0" skip="0">Charles_Proxy</stat>
+<stat pass="1" fail="0" skip="0">Charles_Proxy_Android</stat>
+<stat pass="1" fail="0" skip="0">Charles_Proxy_IOS</stat>
+<stat pass="1" fail="0" skip="0">Emulator_Android_Device</stat>
+<stat pass="1" fail="0" skip="0">IOS_Safari</stat>
+<stat pass="1" fail="0" skip="0">Simulator_IOS_Device</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Robot Framework Appium Charles Proxy IOS And Android Mobile Browsers Test Run">Robot Framework Appium Charles Proxy IOS And Android Mobile Browsers Test Run</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Charles-Proxy-Android-Device-Examples">Robot Framework Appium Charles Proxy IOS And Android Mobile Browsers Test Run.Charles-Proxy-Android-Device-Examples</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Charles-Proxy-IOS-Device-Examples">Robot Framework Appium Charles Proxy IOS And Android Mobile Browsers Test Run.Charles-Proxy-IOS-Device-Examples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

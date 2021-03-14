@@ -1,0 +1,2170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210314 13:48:41.444" rpa="false" schemaversion="2">
+<suite id="s1" name="Appium Run">
+<suite id="s1-s1" name="PaBot-Android-Device-Graphwalker-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-Device-Graphwalker-Examples.robot">
+<test id="s1-s1-t1" name="PARALELL ANDROID APP GRAPHWALKER TEST - Run Android calculator app Graphwalker test, capture screenshots, and record video of the entire run.">
+<kw name="Open Existing Default Installed Android App" library="Appium-Mobile-Resources" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.679" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4724/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:48:41.677" endtime="20210314 13:48:41.679"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>%{DEVICE_NAME_ANDROID1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.681" level="INFO">${DEVICE_NAME_ANDROID} = Nexus_5_API_27</msg>
+<status status="PASS" starttime="20210314 13:48:41.679" endtime="20210314 13:48:41.681"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<arg>%{PARALLEL_APPIUM_PORT2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.683" level="INFO">${APPIUM_PORT} = 4724</msg>
+<status status="PASS" starttime="20210314 13:48:41.681" endtime="20210314 13:48:41.683"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${ANDROID_APP_ACTIVITY}</arg>
+<arg>%{ANDROID_NATIVE_DEFAULT_APP_ACTIVITY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.685" level="INFO">${ANDROID_APP_ACTIVITY} = com.android.calculator2.Calculator</msg>
+<status status="PASS" starttime="20210314 13:48:41.683" endtime="20210314 13:48:41.686"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${ANDROID_APP_PACKAGE}</arg>
+<arg>%{ANDROID_NATIVE_DEFAULT_APP_PACKAGE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:48:41.688" level="INFO">${ANDROID_APP_PACKAGE} = com.android.calculator2</msg>
+<status status="PASS" starttime="20210314 13:48:41.686" endtime="20210314 13:48:41.688"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.689" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:48:41.688" endtime="20210314 13:48:41.689"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.690" level="INFO">Length is 14</msg>
+<status status="PASS" starttime="20210314 13:48:41.689" endtime="20210314 13:48:41.690"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.690" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20210314 13:48:41.690" endtime="20210314 13:48:41.690"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${ANDROID_APP_ACTIVITY}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.691" level="INFO">Length is 34</msg>
+<status status="PASS" starttime="20210314 13:48:41.690" endtime="20210314 13:48:41.691"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${ANDROID_APP_PACKAGE}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:48:41.691" level="INFO">Length is 23</msg>
+<status status="PASS" starttime="20210314 13:48:41.691" endtime="20210314 13:48:41.691"/>
+</kw>
+<kw name="Set Up Native Default Android App" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>${APPIUM_PORT}</arg>
+<arg>${ANDROID_APP_ACTIVITY}</arg>
+<arg>${ANDROID_APP_PACKAGE}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_ANDROID}</arg>
+<arg>deviceName=${DEVICE_NAME_ANDROID}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:48:41.692" endtime="20210314 13:48:49.246"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:41.691" endtime="20210314 13:48:49.246"/>
+</kw>
+<timeout value="1 minute"/>
+<status status="PASS" starttime="20210314 13:48:41.675" endtime="20210314 13:48:49.246"/>
+</kw>
+<kw name="Run Graphwalker Model Based Tests With Appium">
+<arg>AppiumGraphwalkerPath.csv</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${GRAPHWALKER_CSV_FILE_CONTENTS}</var>
+<arg>${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//${GRAPHWALKER_CSV_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20210314 13:48:49.248" level="INFO" html="true">Getting file '&lt;a href="file:///Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/AppiumGraphwalkerPath.csv"&gt;/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-Two/AppiumGraphwalkerPath.csv&lt;/a&gt;'.</msg>
+<msg timestamp="20210314 13:48:49.249" level="INFO">${GRAPHWALKER_CSV_FILE_CONTENTS} = press_one_button
+check_calculator_process_activity_with_adb_shell_ps_command
+press_six_button
+check_calculator_process_activity_with_adb_shell_ps_command
+press_five_button
+check_calculator_process_act...</msg>
+<status status="PASS" starttime="20210314 13:48:49.247" endtime="20210314 13:48:49.249"/>
+</kw>
+<kw name="Get Graphwalker Path Keywords From CSV File">
+<var>@{GRAPHWALKER_PATH_LINES}</var>
+<arg>${GRAPHWALKER_CSV_FILE_CONTENTS}</arg>
+<kw name="Split To Lines" library="String">
+<var>@{GRAPHWALKER_LINES}</var>
+<arg>${GRAPHWALKER_CSV_CONTENT}</arg>
+<doc>Splits the given string to lines.</doc>
+<msg timestamp="20210314 13:48:49.250" level="INFO">54 lines returned</msg>
+<msg timestamp="20210314 13:48:49.251" level="INFO">@{GRAPHWALKER_LINES} = [ press_one_button | check_calculator_process_activity_with_adb_shell_ps_command | press_six_button | check_calculator_process_activity_with_adb_shell_ps_command | press_five_button | check_calculator...</msg>
+<status status="PASS" starttime="20210314 13:48:49.250" endtime="20210314 13:48:49.251"/>
+</kw>
+<msg timestamp="20210314 13:48:49.251" level="INFO">@{GRAPHWALKER_PATH_LINES} = [ press_one_button | check_calculator_process_activity_with_adb_shell_ps_command | press_six_button | check_calculator_process_activity_with_adb_shell_ps_command | press_five_button | check_calculator...</msg>
+<status status="PASS" starttime="20210314 13:48:49.249" endtime="20210314 13:48:49.252"/>
+</kw>
+<kw name="Run Appium Graphwalker Path Keywords">
+<arg>${GRAPHWALKER_PATH_LINES}</arg>
+<for flavor="IN">
+<var>${GRAPHWALKER_PATH_KEYWORD}</var>
+<value>@{GRAPHWALKER_CSV_LINES}</value>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_one_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_one_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>1</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>1</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:48:49.256" endtime="20210314 13:48:50.104"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.255" endtime="20210314 13:48:50.104"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.254" endtime="20210314 13:48:50.104"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:50.415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:50.104" endtime="20210314 13:48:50.415"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.254" endtime="20210314 13:48:50.416"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.253" endtime="20210314 13:48:50.416"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.253" endtime="20210314 13:48:50.416"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:50.459" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1457176  85552 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:50.417" endtime="20210314 13:48:50.459"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:50.459" endtime="20210314 13:48:50.459"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.417" endtime="20210314 13:48:50.460"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.416" endtime="20210314 13:48:50.460"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.416" endtime="20210314 13:48:50.460"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_six_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_six_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>6</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>6</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:48:50.461" endtime="20210314 13:48:50.695"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.461" endtime="20210314 13:48:50.695"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.461" endtime="20210314 13:48:50.695"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:50.993" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:50.696" endtime="20210314 13:48:50.993"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.460" endtime="20210314 13:48:50.994"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.460" endtime="20210314 13:48:50.994"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.460" endtime="20210314 13:48:50.994"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:51.041" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1457176  86248 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:50.994" endtime="20210314 13:48:51.041"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:51.041" endtime="20210314 13:48:51.041"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.994" endtime="20210314 13:48:51.042"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.994" endtime="20210314 13:48:51.042"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:50.994" endtime="20210314 13:48:51.042"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_five_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_five_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>5</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>5</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:48:51.043" endtime="20210314 13:48:51.287"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.043" endtime="20210314 13:48:51.287"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.042" endtime="20210314 13:48:51.287"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:51.571" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:51.287" endtime="20210314 13:48:51.571"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.042" endtime="20210314 13:48:51.571"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.042" endtime="20210314 13:48:51.571"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.042" endtime="20210314 13:48:51.571"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:51.621" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1457176  86216 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:51.572" endtime="20210314 13:48:51.621"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:51.621" endtime="20210314 13:48:51.622"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.572" endtime="20210314 13:48:51.622"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.571" endtime="20210314 13:48:51.622"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.571" endtime="20210314 13:48:51.622"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_zero_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_zero_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>0</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>0</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:48:51.624" endtime="20210314 13:48:51.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.623" endtime="20210314 13:48:51.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.623" endtime="20210314 13:48:51.870"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:52.218" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:51.870" endtime="20210314 13:48:52.218"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.622" endtime="20210314 13:48:52.218"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.622" endtime="20210314 13:48:52.218"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:51.622" endtime="20210314 13:48:52.218"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:52.268" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1457176  87152 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:52.219" endtime="20210314 13:48:52.268"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:52.269" endtime="20210314 13:48:52.269"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.219" endtime="20210314 13:48:52.269"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.219" endtime="20210314 13:48:52.269"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.218" endtime="20210314 13:48:52.269"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_addition_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_addition_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=plus</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=plus</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:52.274" level="INFO">Clicking element 'accessibility_id=plus'.</msg>
+<status status="PASS" starttime="20210314 13:48:52.271" endtime="20210314 13:48:52.410"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:54.412" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:52.410" endtime="20210314 13:48:54.412"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:54.412" endtime="20210314 13:48:54.666"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.271" endtime="20210314 13:48:54.667"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.270" endtime="20210314 13:48:54.667"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:55.359" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:54.667" endtime="20210314 13:48:55.359"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.270" endtime="20210314 13:48:55.359"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.270" endtime="20210314 13:48:55.359"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:52.270" endtime="20210314 13:48:55.359"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:55.435" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1457304  87176 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:55.361" endtime="20210314 13:48:55.435"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:55.435" endtime="20210314 13:48:55.436"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.360" endtime="20210314 13:48:55.436"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.360" endtime="20210314 13:48:55.436"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.359" endtime="20210314 13:48:55.436"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_four_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_four_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>4</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>4</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:48:55.439" endtime="20210314 13:48:55.583"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.438" endtime="20210314 13:48:55.583"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.438" endtime="20210314 13:48:55.583"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:56.230" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:55.584" endtime="20210314 13:48:56.230"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.437" endtime="20210314 13:48:56.230"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.436" endtime="20210314 13:48:56.231"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:55.436" endtime="20210314 13:48:56.231"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:56.323" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1458396  87436 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:56.232" endtime="20210314 13:48:56.323"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:56.324" endtime="20210314 13:48:56.324"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.232" endtime="20210314 13:48:56.324"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.231" endtime="20210314 13:48:56.324"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.231" endtime="20210314 13:48:56.324"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_subtraction_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_subtraction_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:56.330" level="INFO">Clicking element 'accessibility_id=minus'.</msg>
+<status status="PASS" starttime="20210314 13:48:56.327" endtime="20210314 13:48:56.441"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:58.442" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:56.441" endtime="20210314 13:48:58.442"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:58.443" endtime="20210314 13:48:58.589"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.326" endtime="20210314 13:48:58.589"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.326" endtime="20210314 13:48:58.590"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:48:58.915" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:48:58.590" endtime="20210314 13:48:58.915"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.325" endtime="20210314 13:48:58.915"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.325" endtime="20210314 13:48:58.915"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:56.325" endtime="20210314 13:48:58.915"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:48:58.968" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1458396  87492 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:48:58.916" endtime="20210314 13:48:58.969"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:48:58.969" endtime="20210314 13:48:58.969"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.916" endtime="20210314 13:48:58.969"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.915" endtime="20210314 13:48:58.969"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.915" endtime="20210314 13:48:58.969"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_subtraction_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_subtraction_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:58.975" level="INFO">Clicking element 'accessibility_id=minus'.</msg>
+<status status="PASS" starttime="20210314 13:48:58.970" endtime="20210314 13:48:59.015"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:01.016" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:59.015" endtime="20210314 13:49:01.017"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:01.017" endtime="20210314 13:49:01.129"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.970" endtime="20210314 13:49:01.130"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.970" endtime="20210314 13:49:01.131"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:01.431" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:01.131" endtime="20210314 13:49:01.432"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.969" endtime="20210314 13:49:01.432"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.969" endtime="20210314 13:49:01.432"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:58.969" endtime="20210314 13:49:01.432"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:01.473" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1458396  87732 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:01.433" endtime="20210314 13:49:01.473"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:01.473" endtime="20210314 13:49:01.473"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.432" endtime="20210314 13:49:01.473"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.432" endtime="20210314 13:49:01.473"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.432" endtime="20210314 13:49:01.473"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_two_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_two_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>2</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>2</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:01.474" endtime="20210314 13:49:01.546"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.474" endtime="20210314 13:49:01.546"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.474" endtime="20210314 13:49:01.546"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:01.870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:01.546" endtime="20210314 13:49:01.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.474" endtime="20210314 13:49:01.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.474" endtime="20210314 13:49:01.870"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.473" endtime="20210314 13:49:01.870"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:01.916" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459488  87960 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:01.871" endtime="20210314 13:49:01.917"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:01.917" endtime="20210314 13:49:01.917"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.871" endtime="20210314 13:49:01.917"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.871" endtime="20210314 13:49:01.917"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.871" endtime="20210314 13:49:01.917"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_seven_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_seven_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>7</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>7</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:01.919" endtime="20210314 13:49:02.135"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.918" endtime="20210314 13:49:02.135"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.918" endtime="20210314 13:49:02.135"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:02.426" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:02.135" endtime="20210314 13:49:02.426"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.918" endtime="20210314 13:49:02.426"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.918" endtime="20210314 13:49:02.426"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:01.917" endtime="20210314 13:49:02.426"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:02.472" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459488  87944 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:02.428" endtime="20210314 13:49:02.472"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:02.472" endtime="20210314 13:49:02.472"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.427" endtime="20210314 13:49:02.472"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.427" endtime="20210314 13:49:02.472"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.427" endtime="20210314 13:49:02.472"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_subtraction_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_subtraction_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=minus</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:02.476" level="INFO">Clicking element 'accessibility_id=minus'.</msg>
+<status status="PASS" starttime="20210314 13:49:02.474" endtime="20210314 13:49:02.687"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:04.688" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:02.687" endtime="20210314 13:49:04.688"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:04.688" endtime="20210314 13:49:04.766"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.473" endtime="20210314 13:49:04.766"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.473" endtime="20210314 13:49:04.766"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:05.033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-11.png"&gt;&lt;img src="appium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:04.766" endtime="20210314 13:49:05.033"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.473" endtime="20210314 13:49:05.033"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.473" endtime="20210314 13:49:05.034"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:02.472" endtime="20210314 13:49:05.034"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:05.069" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  87968 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:05.034" endtime="20210314 13:49:05.069"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:05.069" endtime="20210314 13:49:05.069"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.034" endtime="20210314 13:49:05.069"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.034" endtime="20210314 13:49:05.069"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.034" endtime="20210314 13:49:05.069"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_four_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_four_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>4</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>4</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:05.071" endtime="20210314 13:49:05.132"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.071" endtime="20210314 13:49:05.132"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.070" endtime="20210314 13:49:05.132"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:05.478" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-12.png"&gt;&lt;img src="appium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:05.133" endtime="20210314 13:49:05.478"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.070" endtime="20210314 13:49:05.478"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.070" endtime="20210314 13:49:05.478"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.070" endtime="20210314 13:49:05.478"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:05.529" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88000 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:05.479" endtime="20210314 13:49:05.529"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:05.530" endtime="20210314 13:49:05.530"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.479" endtime="20210314 13:49:05.530"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.478" endtime="20210314 13:49:05.530"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.478" endtime="20210314 13:49:05.530"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_division_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_division_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=divide</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=divide</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:05.533" level="INFO">Clicking element 'accessibility_id=divide'.</msg>
+<status status="PASS" starttime="20210314 13:49:05.531" endtime="20210314 13:49:06.170"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:08.171" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:06.170" endtime="20210314 13:49:08.171"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:08.171" endtime="20210314 13:49:08.234"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.531" endtime="20210314 13:49:08.234"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.531" endtime="20210314 13:49:08.234"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:08.502" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-13.png"&gt;&lt;img src="appium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:08.234" endtime="20210314 13:49:08.502"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.530" endtime="20210314 13:49:08.502"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.530" endtime="20210314 13:49:08.502"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:05.530" endtime="20210314 13:49:08.502"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:08.541" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88224 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:08.503" endtime="20210314 13:49:08.541"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:08.541" endtime="20210314 13:49:08.542"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.503" endtime="20210314 13:49:08.542"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.503" endtime="20210314 13:49:08.542"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.503" endtime="20210314 13:49:08.542"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_nine_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_nine_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>9</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>9</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:08.544" endtime="20210314 13:49:08.607"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.543" endtime="20210314 13:49:08.608"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.543" endtime="20210314 13:49:08.608"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:09.329" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-14.png"&gt;&lt;img src="appium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:08.608" endtime="20210314 13:49:09.329"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.543" endtime="20210314 13:49:09.329"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.542" endtime="20210314 13:49:09.329"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:08.542" endtime="20210314 13:49:09.329"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:09.375" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88468 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:09.330" endtime="20210314 13:49:09.375"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:09.375" endtime="20210314 13:49:09.376"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.330" endtime="20210314 13:49:09.376"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.329" endtime="20210314 13:49:09.376"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.329" endtime="20210314 13:49:09.376"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_nine_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_nine_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>9</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>9</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:09.377" endtime="20210314 13:49:09.435"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.377" endtime="20210314 13:49:09.436"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.376" endtime="20210314 13:49:09.436"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:09.755" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-15.png"&gt;&lt;img src="appium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:09.436" endtime="20210314 13:49:09.755"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.376" endtime="20210314 13:49:09.755"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.376" endtime="20210314 13:49:09.755"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.376" endtime="20210314 13:49:09.755"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:09.812" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88468 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:09.756" endtime="20210314 13:49:09.812"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:09.813" endtime="20210314 13:49:09.813"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.756" endtime="20210314 13:49:09.813"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.755" endtime="20210314 13:49:09.813"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.755" endtime="20210314 13:49:09.813"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_five_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_five_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>5</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>5</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:09.815" endtime="20210314 13:49:10.009"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.814" endtime="20210314 13:49:10.010"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.814" endtime="20210314 13:49:10.010"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:10.281" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-16.png"&gt;&lt;img src="appium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:10.010" endtime="20210314 13:49:10.281"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.814" endtime="20210314 13:49:10.281"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.814" endtime="20210314 13:49:10.281"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:09.813" endtime="20210314 13:49:10.281"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:10.334" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88468 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:10.282" endtime="20210314 13:49:10.334"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:10.334" endtime="20210314 13:49:10.334"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.282" endtime="20210314 13:49:10.335"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.282" endtime="20210314 13:49:10.335"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.282" endtime="20210314 13:49:10.335"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_division_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_division_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=divide</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=divide</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:10.338" level="INFO">Clicking element 'accessibility_id=divide'.</msg>
+<status status="PASS" starttime="20210314 13:49:10.336" endtime="20210314 13:49:11.056"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:13.056" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:11.056" endtime="20210314 13:49:13.057"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:13.057" endtime="20210314 13:49:13.119"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.336" endtime="20210314 13:49:13.119"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.336" endtime="20210314 13:49:13.119"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:13.413" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-17.png"&gt;&lt;img src="appium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:13.119" endtime="20210314 13:49:13.413"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.335" endtime="20210314 13:49:13.413"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.335" endtime="20210314 13:49:13.414"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:10.335" endtime="20210314 13:49:13.414"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:13.453" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88812 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:13.415" endtime="20210314 13:49:13.453"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:13.454" endtime="20210314 13:49:13.454"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.414" endtime="20210314 13:49:13.454"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.414" endtime="20210314 13:49:13.454"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.414" endtime="20210314 13:49:13.454"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_seven_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_seven_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>7</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>7</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:13.456" endtime="20210314 13:49:13.511"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.456" endtime="20210314 13:49:13.512"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.455" endtime="20210314 13:49:13.512"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:13.797" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-18.png"&gt;&lt;img src="appium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:13.512" endtime="20210314 13:49:13.797"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.455" endtime="20210314 13:49:13.797"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.455" endtime="20210314 13:49:13.797"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.454" endtime="20210314 13:49:13.797"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:13.839" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  88820 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:13.799" endtime="20210314 13:49:13.840"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:13.840" endtime="20210314 13:49:13.840"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.798" endtime="20210314 13:49:13.840"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.798" endtime="20210314 13:49:13.840"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.797" endtime="20210314 13:49:13.840"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_mutiplication_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_mutiplication_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Specific Element Then Check Until Screen Shows Text</arg>
+<arg>accessibility_id=multiply</arg>
+<arg>RAD</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>accessibility_id=multiply</arg>
+<arg>RAD</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:49:13.844" level="INFO">Clicking element 'accessibility_id=multiply'.</msg>
+<status status="PASS" starttime="20210314 13:49:13.842" endtime="20210314 13:49:14.066"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:16.067" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:14.066" endtime="20210314 13:49:16.067"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:49:16.068" endtime="20210314 13:49:16.143"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.841" endtime="20210314 13:49:16.144"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.841" endtime="20210314 13:49:16.144"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:16.402" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-19.png"&gt;&lt;img src="appium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:16.144" endtime="20210314 13:49:16.403"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.841" endtime="20210314 13:49:16.403"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.841" endtime="20210314 13:49:16.403"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:13.840" endtime="20210314 13:49:16.403"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:16.446" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  89052 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:16.403" endtime="20210314 13:49:16.446"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:16.446" endtime="20210314 13:49:16.446"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.403" endtime="20210314 13:49:16.446"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.403" endtime="20210314 13:49:16.446"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.403" endtime="20210314 13:49:16.446"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_seven_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_seven_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>7</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>7</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:16.448" endtime="20210314 13:49:16.504"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.447" endtime="20210314 13:49:16.504"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.447" endtime="20210314 13:49:16.504"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:16.791" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-20.png"&gt;&lt;img src="appium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:16.504" endtime="20210314 13:49:16.791"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.447" endtime="20210314 13:49:16.791"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.447" endtime="20210314 13:49:16.792"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.447" endtime="20210314 13:49:16.792"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:16.850" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  89056 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:16.793" endtime="20210314 13:49:16.850"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:16.850" endtime="20210314 13:49:16.851"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.792" endtime="20210314 13:49:16.851"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.792" endtime="20210314 13:49:16.851"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.792" endtime="20210314 13:49:16.851"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_five_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_five_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>5</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>5</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:16.852" endtime="20210314 13:49:17.211"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.852" endtime="20210314 13:49:17.211"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.852" endtime="20210314 13:49:17.211"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:17.680" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-21.png"&gt;&lt;img src="appium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:17.212" endtime="20210314 13:49:17.680"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.851" endtime="20210314 13:49:17.680"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.851" endtime="20210314 13:49:17.681"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:16.851" endtime="20210314 13:49:17.681"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:17.734" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  89120 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:17.682" endtime="20210314 13:49:17.734"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:17.734" endtime="20210314 13:49:17.735"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.682" endtime="20210314 13:49:17.735"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.681" endtime="20210314 13:49:17.735"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.681" endtime="20210314 13:49:17.736"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_four_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_four_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>4</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>4</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:17.737" endtime="20210314 13:49:17.891"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.737" endtime="20210314 13:49:17.892"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.737" endtime="20210314 13:49:17.892"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:18.201" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-22.png"&gt;&lt;img src="appium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:17.892" endtime="20210314 13:49:18.202"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.736" endtime="20210314 13:49:18.202"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.736" endtime="20210314 13:49:18.202"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:17.736" endtime="20210314 13:49:18.202"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:18.247" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459616  89176 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:18.203" endtime="20210314 13:49:18.247"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:18.247" endtime="20210314 13:49:18.247"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.202" endtime="20210314 13:49:18.248"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.202" endtime="20210314 13:49:18.248"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.202" endtime="20210314 13:49:18.248"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_eight_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_eight_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>8</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>8</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:18.250" endtime="20210314 13:49:18.570"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.249" endtime="20210314 13:49:18.570"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.249" endtime="20210314 13:49:18.570"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:18.882" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-23.png"&gt;&lt;img src="appium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:18.570" endtime="20210314 13:49:18.882"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.249" endtime="20210314 13:49:18.882"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.248" endtime="20210314 13:49:18.882"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.248" endtime="20210314 13:49:18.883"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:18.936" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459596  90896 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:18.883" endtime="20210314 13:49:18.936"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:18.937" endtime="20210314 13:49:18.937"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.883" endtime="20210314 13:49:18.937"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.883" endtime="20210314 13:49:18.937"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.883" endtime="20210314 13:49:18.937"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_eight_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_eight_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>8</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>8</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:18.938" endtime="20210314 13:49:19.236"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.938" endtime="20210314 13:49:19.236"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.938" endtime="20210314 13:49:19.236"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:19.546" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-24.png"&gt;&lt;img src="appium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:19.236" endtime="20210314 13:49:19.547"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.938" endtime="20210314 13:49:19.547"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.937" endtime="20210314 13:49:19.547"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:18.937" endtime="20210314 13:49:19.547"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:19.613" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459596  90880 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:19.549" endtime="20210314 13:49:19.613"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:19.613" endtime="20210314 13:49:19.614"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.548" endtime="20210314 13:49:19.614"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.548" endtime="20210314 13:49:19.614"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.547" endtime="20210314 13:49:19.614"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_zero_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_zero_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>0</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>0</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:19.616" endtime="20210314 13:49:19.909"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.615" endtime="20210314 13:49:19.910"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.615" endtime="20210314 13:49:19.910"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:20.225" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-25.png"&gt;&lt;img src="appium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:19.910" endtime="20210314 13:49:20.225"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.614" endtime="20210314 13:49:20.226"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.614" endtime="20210314 13:49:20.226"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:19.614" endtime="20210314 13:49:20.226"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:20.281" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459596  90880 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:20.227" endtime="20210314 13:49:20.281"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:20.281" endtime="20210314 13:49:20.282"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.226" endtime="20210314 13:49:20.282"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.226" endtime="20210314 13:49:20.282"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.226" endtime="20210314 13:49:20.282"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_five_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_five_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>5</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>5</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:20.284" endtime="20210314 13:49:20.580"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.284" endtime="20210314 13:49:20.580"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.283" endtime="20210314 13:49:20.581"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:20.870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-26.png"&gt;&lt;img src="appium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:20.581" endtime="20210314 13:49:20.871"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.283" endtime="20210314 13:49:20.871"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.282" endtime="20210314 13:49:20.871"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.282" endtime="20210314 13:49:20.871"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:20.918" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459596  90860 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:20.872" endtime="20210314 13:49:20.918"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:20.918" endtime="20210314 13:49:20.918"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.872" endtime="20210314 13:49:20.918"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.872" endtime="20210314 13:49:20.918"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.871" endtime="20210314 13:49:20.918"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">press_three_button</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="press_three_button">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Tap According To Text That Is Displayed</arg>
+<arg>3</arg>
+<arg>True</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Tap According To Text That Is Displayed" library="Appium-Mobile-Resources">
+<arg>3</arg>
+<arg>True</arg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>exact_match=${EXACT_MATCH_MODE}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20210314 13:49:20.919" endtime="20210314 13:49:21.246"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.919" endtime="20210314 13:49:21.246"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.919" endtime="20210314 13:49:21.246"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210314 13:49:21.555" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-27.png"&gt;&lt;img src="appium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210314 13:49:21.246" endtime="20210314 13:49:21.555"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.919" endtime="20210314 13:49:21.555"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.918" endtime="20210314 13:49:21.555"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:20.918" endtime="20210314 13:49:21.555"/>
+</iter>
+<iter>
+<var name="${GRAPHWALKER_PATH_KEYWORD}">check_calculator_process_activity_with_adb_shell_ps_command</var>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${GRAPHWALKER_PATH_KEYWORD}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="check_calculator_process_activity_with_adb_shell_ps_command">
+<kw name="Execute Adb Shell" library="AppiumLibrary">
+<var>${CHECK_ADB_OUTPUT}</var>
+<arg>ps | grep calculator</arg>
+<doc>Execute ADB shell commands</doc>
+<msg timestamp="20210314 13:49:21.606" level="INFO">${CHECK_ADB_OUTPUT} = u0_a52        8965  1511 1459596  90832 SyS_epoll_wait      0 S com.android.calculator2
+</msg>
+<status status="PASS" starttime="20210314 13:49:21.557" endtime="20210314 13:49:21.606"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${CHECK_ADB_OUTPUT}</arg>
+<arg>calculator</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210314 13:49:21.607" endtime="20210314 13:49:21.607"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:21.556" endtime="20210314 13:49:21.607"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:21.556" endtime="20210314 13:49:21.607"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:21.555" endtime="20210314 13:49:21.607"/>
+</iter>
+<status status="PASS" starttime="20210314 13:48:49.252" endtime="20210314 13:49:21.608"/>
+</for>
+<status status="PASS" starttime="20210314 13:48:49.252" endtime="20210314 13:49:21.608"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:49.247" endtime="20210314 13:49:21.608"/>
+</kw>
+<kw name="Close All Android Apps Without Device Reboot" type="TEARDOWN">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:26.609" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:21.609" endtime="20210314 13:49:26.609"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Repeat Keyword</arg>
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Close Android Apps With Adb Shell And Appium Keyword</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Close Android Apps With Adb Shell And Appium Keyword</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20210314 13:49:26.610" level="INFO">Repeating keyword, round 1/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:26.614" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:26.611" endtime="20210314 13:49:26.902"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:26.610" endtime="20210314 13:49:26.902"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:26.907" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:26.903" endtime="20210314 13:49:27.312"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:26.903" endtime="20210314 13:49:27.312"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:27.316" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:27.313" endtime="20210314 13:49:27.864"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:27.313" endtime="20210314 13:49:27.864"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:49:27.865" endtime="20210314 13:49:27.962"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:27.864" endtime="20210314 13:49:27.962"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:26.610" endtime="20210314 13:49:27.963"/>
+</kw>
+<msg timestamp="20210314 13:49:27.963" level="INFO">Repeating keyword, round 2/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:27.968" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:27.964" endtime="20210314 13:49:28.374"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:27.964" endtime="20210314 13:49:28.375"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:28.380" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:28.377" endtime="20210314 13:49:29.145"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:28.375" endtime="20210314 13:49:29.145"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:29.151" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:29.147" endtime="20210314 13:49:29.649"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:29.146" endtime="20210314 13:49:29.649"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:49:29.650" endtime="20210314 13:49:29.656"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:29.650" endtime="20210314 13:49:29.656"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:27.963" endtime="20210314 13:49:29.657"/>
+</kw>
+<msg timestamp="20210314 13:49:29.657" level="INFO">Repeating keyword, round 3/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:29.662" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:29.658" endtime="20210314 13:49:30.146"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:29.658" endtime="20210314 13:49:30.146"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:30.150" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:30.147" endtime="20210314 13:49:30.492"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:30.147" endtime="20210314 13:49:30.492"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:30.496" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:30.493" endtime="20210314 13:49:30.906"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:30.493" endtime="20210314 13:49:30.906"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:49:30.907" endtime="20210314 13:49:30.912"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:30.906" endtime="20210314 13:49:30.912"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:29.657" endtime="20210314 13:49:30.912"/>
+</kw>
+<msg timestamp="20210314 13:49:30.912" level="INFO">Repeating keyword, round 4/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:30.918" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:30.914" endtime="20210314 13:49:31.247"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:30.913" endtime="20210314 13:49:31.247"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:31.252" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:31.248" endtime="20210314 13:49:31.700"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:31.248" endtime="20210314 13:49:31.700"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:31.705" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:31.701" endtime="20210314 13:49:32.178"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:31.701" endtime="20210314 13:49:32.178"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:49:32.179" endtime="20210314 13:49:32.182"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.179" endtime="20210314 13:49:32.182"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:30.913" endtime="20210314 13:49:32.182"/>
+</kw>
+<msg timestamp="20210314 13:49:32.182" level="INFO">Repeating keyword, round 5/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:32.186" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:32.183" endtime="20210314 13:49:32.423"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.183" endtime="20210314 13:49:32.423"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:32.427" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:32.424" endtime="20210314 13:49:32.692"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.423" endtime="20210314 13:49:32.692"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:49:32.696" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:49:32.693" endtime="20210314 13:49:32.912"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.693" endtime="20210314 13:49:32.912"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:49:32.913" endtime="20210314 13:49:32.915"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.913" endtime="20210314 13:49:32.915"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:32.183" endtime="20210314 13:49:32.916"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:26.610" endtime="20210314 13:49:32.916"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:26.609" endtime="20210314 13:49:32.916"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:49:37.918" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:49:32.916" endtime="20210314 13:49:37.918"/>
+</kw>
+<status status="PASS" starttime="20210314 13:49:21.608" endtime="20210314 13:49:37.919"/>
+</kw>
+<tag>Android_App</tag>
+<tag>Emulator_Android_Device</tag>
+<tag>Model_Based_Testing</tag>
+<status status="PASS" starttime="20210314 13:48:41.674" endtime="20210314 13:49:37.919"/>
+</test>
+<doc>Simple Android app examples using AppiumLibrary, PaBot and a Model Based Testing tool called Graphwalker. More information about
+Graphwalker can be found here -&gt; http://graphwalker.github.io/</doc>
+<status status="PASS" starttime="20210314 13:48:41.469" endtime="20210314 13:49:37.922"/>
+</suite>
+<status status="PASS" starttime="20210314 13:48:41.446" endtime="20210314 13:49:37.925"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Android_App</stat>
+<stat pass="1" fail="0" skip="0">Emulator_Android_Device</stat>
+<stat pass="1" fail="0" skip="0">Model_Based_Testing</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Appium Run">Appium Run</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="PaBot-Android-Device-Graphwalker-Examples">Appium Run.PaBot-Android-Device-Graphwalker-Examples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

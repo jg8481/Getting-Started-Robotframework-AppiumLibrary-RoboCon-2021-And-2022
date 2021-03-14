@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.2 on darwin)" generated="20210314 13:47:13.612" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Framework Appium IOS And Android Mobile Browsers Test Run">
+<suite id="s1-s1" name="IOS-Device-Safari-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-One/IOS-Device-Safari-Examples.robot">
+<test id="s1-s1-t1" name="IOS SAFARI TEST 1 - Open a Safari browser using the URL set in the provided .env file then check the page.">
+<kw name="Open The Safari Browser In IOS" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:13.914" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4723/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:47:13.913" endtime="20210314 13:47:13.914"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>%{DEVICE_NAME_IOS1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:13.915" level="INFO">${DEVICE_NAME_IOS} = iPad Pro (12.9-inch) (4th generation)</msg>
+<status status="PASS" starttime="20210314 13:47:13.915" endtime="20210314 13:47:13.915"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<arg>%{PARALLEL_APPIUM_PORT1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:13.917" level="INFO">${APPIUM_PORT} = 4723</msg>
+<status status="PASS" starttime="20210314 13:47:13.916" endtime="20210314 13:47:13.917"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<arg>%{PARALLEL_APPIUM_WDALOCALPORT1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:13.918" level="INFO">${APPIUM_WDALOCALPORT} = 8100</msg>
+<status status="PASS" starttime="20210314 13:47:13.917" endtime="20210314 13:47:13.918"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:13.918" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:47:13.918" endtime="20210314 13:47:13.918"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_IOS}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:13.918" level="INFO">Length is 37</msg>
+<status status="PASS" starttime="20210314 13:47:13.918" endtime="20210314 13:47:13.918"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:13.919" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20210314 13:47:13.919" endtime="20210314 13:47:13.919"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:13.919" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20210314 13:47:13.919" endtime="20210314 13:47:13.920"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:18.921" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:13.920" endtime="20210314 13:47:18.922"/>
+</kw>
+<kw name="Set Up Safari In IOS" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_IOS}</arg>
+<arg>${APPIUM_PORT}</arg>
+<arg>${APPIUM_WDALOCALPORT}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_IOS}</arg>
+<arg>platformVersion=${PLATFORM_VERSION_IOS}</arg>
+<arg>devicetype=simulator</arg>
+<arg>deviceName=${DEVICE_NAME_IOS}</arg>
+<arg>PORT=${APPIUM_PORT}</arg>
+<arg>WDALOCALPORT=${APPIUM_WDALOCALPORT}</arg>
+<arg>automationName=${IOS_AUTOMATION_NAME}</arg>
+<arg>startIWDP=true</arg>
+<arg>browserName=Safari</arg>
+<arg>bundleid=com.apple.mobilesafari</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:47:18.923" endtime="20210314 13:47:25.903"/>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>%{APP_URL}</arg>
+<doc>Opens URL in default web browser.</doc>
+<status status="PASS" starttime="20210314 13:47:25.903" endtime="20210314 13:47:27.435"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${RETRY_AMOUNT}x</arg>
+<arg>0.1 sec</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>Password</arg>
+<arg>0.5s</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Password</arg>
+<arg>0.5s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:47:27.436" endtime="20210314 13:47:27.461"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:27.435" endtime="20210314 13:47:27.461"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:28.463" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210314 13:47:27.461" endtime="20210314 13:47:28.463"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:18.922" endtime="20210314 13:47:28.463"/>
+</kw>
+<timeout value="4 minutes"/>
+<status status="PASS" starttime="20210314 13:47:13.913" endtime="20210314 13:47:28.463"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>User</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:47:28.463" endtime="20210314 13:47:28.493"/>
+</kw>
+<tag>IOS_Safari</tag>
+<tag>Simulator_IOS_Device</tag>
+<status status="PASS" starttime="20210314 13:47:13.912" endtime="20210314 13:47:28.493"/>
+</test>
+<test id="s1-s1-t2" name="IOS SAFARI TEST 2 - Tap the Sign Up link then check the page.">
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>//a[@href="/signup"]</arg>
+<arg>Submit</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:28.496" level="INFO">Clicking element '//a[@href="/signup"]'.</msg>
+<status status="PASS" starttime="20210314 13:47:28.494" endtime="20210314 13:47:28.597"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:30.598" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:28.597" endtime="20210314 13:47:30.598"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:47:30.598" endtime="20210314 13:47:30.651"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:28.494" endtime="20210314 13:47:30.652"/>
+</kw>
+<tag>IOS_Safari</tag>
+<tag>Simulator_IOS_Device</tag>
+<status status="PASS" starttime="20210314 13:47:28.493" endtime="20210314 13:47:30.652"/>
+</test>
+<test id="s1-s1-t3" name="IOS SAFARI TEST 3 - Fill out the form click the Submit Button then check the page.">
+<kw name="Complete Form With Randomized Test Data">
+<kw name="Create A Random String And Return It" library="Appium-Mobile-Resources">
+<var>${CREATE_RANDOM_DATA}</var>
+<kw name="Generate Random String" library="String">
+<var>${COMPLETELY_RANDOM_STRING}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20210314 13:47:30.654" level="INFO">${COMPLETELY_RANDOM_STRING} = YzBDG</msg>
+<status status="PASS" starttime="20210314 13:47:30.654" endtime="20210314 13:47:30.654"/>
+</kw>
+<msg timestamp="20210314 13:47:30.654" level="INFO">${CREATE_RANDOM_DATA} = YzBDG</msg>
+<status status="PASS" starttime="20210314 13:47:30.653" endtime="20210314 13:47:30.654"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=userName</arg>
+<arg>QA${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:30.657" level="INFO">Typing text 'QAYzBDG' into text field 'id=userName'</msg>
+<status status="PASS" starttime="20210314 13:47:30.655" endtime="20210314 13:47:30.895"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=firstName</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:30.901" level="INFO">Typing text 'testYzBDG' into text field 'id=firstName'</msg>
+<status status="PASS" starttime="20210314 13:47:30.896" endtime="20210314 13:47:31.092"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=lastName</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:31.096" level="INFO">Typing text 'testYzBDG' into text field 'id=lastName'</msg>
+<status status="PASS" starttime="20210314 13:47:31.092" endtime="20210314 13:47:31.294"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=password</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:31.299" level="INFO">Typing text 'testYzBDG' into text field 'id=password'</msg>
+<status status="PASS" starttime="20210314 13:47:31.294" endtime="20210314 13:47:31.476"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=verify</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:31.479" level="INFO">Typing text 'testYzBDG' into text field 'id=verify'</msg>
+<status status="PASS" starttime="20210314 13:47:31.476" endtime="20210314 13:47:31.645"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=email</arg>
+<arg>test${CREATE_RANDOM_DATA}@email.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:31.651" level="INFO">Typing text 'testYzBDG@email.com' into text field 'id=email'</msg>
+<status status="PASS" starttime="20210314 13:47:31.646" endtime="20210314 13:47:31.835"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>css=.btn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:47:31.837" level="INFO">Clicking element 'css=.btn'.</msg>
+<status status="PASS" starttime="20210314 13:47:31.835" endtime="20210314 13:47:32.001"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:37.004" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:32.001" endtime="20210314 13:47:37.004"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:30.653" endtime="20210314 13:47:37.004"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Savings</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:47:37.005" endtime="20210314 13:47:37.050"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:47:37.050" endtime="20210314 13:47:37.097"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:42.099" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:37.098" endtime="20210314 13:47:42.100"/>
+</kw>
+<tag>IOS_Safari</tag>
+<tag>Simulator_IOS_Device</tag>
+<status status="PASS" starttime="20210314 13:47:30.652" endtime="20210314 13:47:42.100"/>
+</test>
+<kw name="Close All Applications" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:42.102" endtime="20210314 13:47:43.146"/>
+</kw>
+<doc>Simple IOS Safari examples using AppiumLibrary.</doc>
+<status status="PASS" starttime="20210314 13:47:13.639" endtime="20210314 13:47:43.146"/>
+</suite>
+<suite id="s1-s2" name="Android-Device-Chrome-Examples" source="/Users/jgorospe/Documents/Getting-Started-Robotframework-Appiumlibrary-RoboCon-2021/Workshop-Examples/Tests/Workshop-Part-One/Android-Device-Chrome-Examples.robot">
+<kw name="Close All Android Apps Without Device Reboot" type="SETUP">
+<arg>5</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:48.159" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:43.157" endtime="20210314 13:47:48.159"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Repeat Keyword</arg>
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Close Android Apps With Adb Shell And Appium Keyword</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Repeat Keyword" library="BuiltIn">
+<arg>${REPEAT_KEYWORD_ITERATIONS} times</arg>
+<arg>Close Android Apps With Adb Shell And Appium Keyword</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<msg timestamp="20210314 13:47:48.160" level="INFO">Repeating keyword, round 1/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:48.167" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:48.161" endtime="20210314 13:47:48.419"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.161" endtime="20210314 13:47:48.419"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:48.423" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:48.420" endtime="20210314 13:47:48.742"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.419" endtime="20210314 13:47:48.742"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:48.746" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:48.743" endtime="20210314 13:47:48.980"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.743" endtime="20210314 13:47:48.981"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:48.981" endtime="20210314 13:47:48.983"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.981" endtime="20210314 13:47:48.983"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.161" endtime="20210314 13:47:48.983"/>
+</kw>
+<msg timestamp="20210314 13:47:48.983" level="INFO">Repeating keyword, round 2/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:48.986" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:48.984" endtime="20210314 13:47:49.203"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.984" endtime="20210314 13:47:49.204"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:49.209" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:49.205" endtime="20210314 13:47:49.567"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:49.204" endtime="20210314 13:47:49.567"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:49.570" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:49.568" endtime="20210314 13:47:49.804"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:49.567" endtime="20210314 13:47:49.805"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:49.806" endtime="20210314 13:47:49.807"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:49.805" endtime="20210314 13:47:49.807"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.983" endtime="20210314 13:47:49.807"/>
+</kw>
+<msg timestamp="20210314 13:47:49.808" level="INFO">Repeating keyword, round 3/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:49.811" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:49.808" endtime="20210314 13:47:50.055"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:49.808" endtime="20210314 13:47:50.055"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:50.059" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:50.056" endtime="20210314 13:47:50.311"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.056" endtime="20210314 13:47:50.311"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:50.314" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:50.312" endtime="20210314 13:47:50.528"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.311" endtime="20210314 13:47:50.528"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:50.529" endtime="20210314 13:47:50.531"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.529" endtime="20210314 13:47:50.531"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:49.808" endtime="20210314 13:47:50.531"/>
+</kw>
+<msg timestamp="20210314 13:47:50.531" level="INFO">Repeating keyword, round 4/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:50.535" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:50.532" endtime="20210314 13:47:50.743"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.532" endtime="20210314 13:47:50.743"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:50.746" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:50.744" endtime="20210314 13:47:51.033"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.743" endtime="20210314 13:47:51.033"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:51.036" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:51.034" endtime="20210314 13:47:51.277"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.033" endtime="20210314 13:47:51.277"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:51.278" endtime="20210314 13:47:51.280"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.278" endtime="20210314 13:47:51.280"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:50.531" endtime="20210314 13:47:51.280"/>
+</kw>
+<msg timestamp="20210314 13:47:51.280" level="INFO">Repeating keyword, round 5/5.</msg>
+<kw name="Close Android Apps With Adb Shell And Appium Keyword" library="Appium-Mobile-Resources">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent KEYCODE_APP_SWITCH</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:51.283" level="INFO">Running command 'adb shell input keyevent KEYCODE_APP_SWITCH 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:51.281" endtime="20210314 13:47:51.540"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.281" endtime="20210314 13:47:51.541"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent 20</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:51.546" level="INFO">Running command 'adb shell input keyevent 20 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:51.542" endtime="20210314 13:47:51.793"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.541" endtime="20210314 13:47:51.793"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Run</arg>
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Run" library="OperatingSystem">
+<arg>adb shell input keyevent DEL</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<msg timestamp="20210314 13:47:51.796" level="INFO">Running command 'adb shell input keyevent DEL 2&gt;&amp;1'.</msg>
+<status status="PASS" starttime="20210314 13:47:51.794" endtime="20210314 13:47:52.013"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.794" endtime="20210314 13:47:52.013"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Applications</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20210314 13:47:52.014" endtime="20210314 13:47:52.016"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:52.014" endtime="20210314 13:47:52.016"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:51.280" endtime="20210314 13:47:52.016"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.160" endtime="20210314 13:47:52.016"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:48.159" endtime="20210314 13:47:52.016"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:47:57.017" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:52.016" endtime="20210314 13:47:57.017"/>
+</kw>
+<status status="PASS" starttime="20210314 13:47:43.157" endtime="20210314 13:47:57.018"/>
+</kw>
+<test id="s1-s2-t1" name="ANDROID CHROME TEST 1 - Open a Chrome browser using the URL set in the provided .env file then check the page.">
+<kw name="Open The Chrome Browser In Android" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>%{PARALLEL_APPIUM_REMOTE_URL2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:57.022" level="INFO">${APPIUM_REMOTE_URL} = http://localhost:4724/wd/hub</msg>
+<status status="PASS" starttime="20210314 13:47:57.020" endtime="20210314 13:47:57.022"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>%{DEVICE_NAME_ANDROID1}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:57.024" level="INFO">${DEVICE_NAME_ANDROID} = Nexus_5_API_27</msg>
+<status status="PASS" starttime="20210314 13:47:57.023" endtime="20210314 13:47:57.024"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<arg>%{PARALLEL_APPIUM_PORT2}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20210314 13:47:57.026" level="INFO">${APPIUM_PORT} = 4724</msg>
+<status status="PASS" starttime="20210314 13:47:57.024" endtime="20210314 13:47:57.026"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:57.027" level="INFO">Length is 28</msg>
+<status status="PASS" starttime="20210314 13:47:57.026" endtime="20210314 13:47:57.027"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:57.027" level="INFO">Length is 14</msg>
+<status status="PASS" starttime="20210314 13:47:57.027" endtime="20210314 13:47:57.027"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${APPIUM_PORT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20210314 13:47:57.028" level="INFO">Length is 4</msg>
+<status status="PASS" starttime="20210314 13:47:57.027" endtime="20210314 13:47:57.028"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:02.029" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:47:57.028" endtime="20210314 13:48:02.029"/>
+</kw>
+<kw name="Set Up Chrome In Android" library="Appium-Mobile-Resources">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>${DEVICE_NAME_ANDROID}</arg>
+<arg>${APPIUM_PORT}</arg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME_ANDROID}</arg>
+<arg>deviceName=${DEVICE_NAME_ANDROID}</arg>
+<arg>PORT=${APPIUM_PORT}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>browserName=Chrome</arg>
+<arg>newCommandTimeout=3600</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20210314 13:48:02.031" endtime="20210314 13:48:08.379"/>
+</kw>
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>%{APP_URL}</arg>
+<doc>Opens URL in default web browser.</doc>
+<status status="PASS" starttime="20210314 13:48:08.379" endtime="20210314 13:48:09.048"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:10.051" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210314 13:48:09.048" endtime="20210314 13:48:10.051"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:02.030" endtime="20210314 13:48:10.052"/>
+</kw>
+<timeout value="1 minute"/>
+<status status="PASS" starttime="20210314 13:47:57.020" endtime="20210314 13:48:10.052"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>User</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:10.053" endtime="20210314 13:48:10.078"/>
+</kw>
+<tag>Android_Chrome</tag>
+<tag>Emulator_Android_Device</tag>
+<status status="PASS" starttime="20210314 13:47:57.018" endtime="20210314 13:48:10.078"/>
+</test>
+<test id="s1-s2-t2" name="ANDROID CHROME TEST 2 - Tap the Sign Up link then check the page.">
+<kw name="Swipe Down Tap The Sign Up Link And Check The Page">
+<kw name="Swipe According To Specific Cordinates With A Duration" library="Appium-Mobile-Resources">
+<arg>15</arg>
+<arg>600</arg>
+<arg>15</arg>
+<arg>200</arg>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${SWIPE_COORDINATE1}</arg>
+<arg>${SWIPE_COORDINATE2}</arg>
+<arg>${SWIPE_COORDINATE3}</arg>
+<arg>${SWIPE_COORDINATE4}</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20210314 13:48:10.079" endtime="20210314 13:48:11.083"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:10.079" endtime="20210314 13:48:11.083"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:16.086" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:11.084" endtime="20210314 13:48:16.087"/>
+</kw>
+<kw name="Tap According To Specific Element Then Check Until Screen Shows Text" library="Appium-Mobile-Resources">
+<arg>//a[@href="/signup"]</arg>
+<arg>Submit</arg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${SPECIFIC_ELEMENT}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:16.092" level="INFO">Clicking element '//a[@href="/signup"]'.</msg>
+<status status="PASS" starttime="20210314 13:48:16.088" endtime="20210314 13:48:16.436"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:18.437" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:16.437" endtime="20210314 13:48:18.437"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${TARGET_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:18.438" endtime="20210314 13:48:18.454"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:16.087" endtime="20210314 13:48:18.454"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Submit</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:18.454" endtime="20210314 13:48:18.465"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:10.079" endtime="20210314 13:48:18.465"/>
+</kw>
+<tag>Android_Chrome</tag>
+<tag>Emulator_Android_Device</tag>
+<status status="PASS" starttime="20210314 13:48:10.078" endtime="20210314 13:48:18.465"/>
+</test>
+<test id="s1-s2-t3" name="ANDROID CHROME TEST 3 - Fill out the form click the Submit Button then check the page.">
+<kw name="Complete Form With Randomized Test Data">
+<kw name="Create A Random String And Return It" library="Appium-Mobile-Resources">
+<var>${CREATE_RANDOM_DATA}</var>
+<kw name="Generate Random String" library="String">
+<var>${COMPLETELY_RANDOM_STRING}</var>
+<arg>5</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20210314 13:48:18.467" level="INFO">${COMPLETELY_RANDOM_STRING} = sKGLt</msg>
+<status status="PASS" starttime="20210314 13:48:18.466" endtime="20210314 13:48:18.467"/>
+</kw>
+<msg timestamp="20210314 13:48:18.467" level="INFO">${CREATE_RANDOM_DATA} = sKGLt</msg>
+<status status="PASS" starttime="20210314 13:48:18.466" endtime="20210314 13:48:18.467"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=userName</arg>
+<arg>QA${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:18.469" level="INFO">Typing text 'QAsKGLt' into text field 'id=userName'</msg>
+<status status="PASS" starttime="20210314 13:48:18.467" endtime="20210314 13:48:18.805"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=firstName</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:18.808" level="INFO">Typing text 'testsKGLt' into text field 'id=firstName'</msg>
+<status status="PASS" starttime="20210314 13:48:18.806" endtime="20210314 13:48:19.111"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=lastName</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:19.114" level="INFO">Typing text 'testsKGLt' into text field 'id=lastName'</msg>
+<status status="PASS" starttime="20210314 13:48:19.112" endtime="20210314 13:48:19.440"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=password</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:19.442" level="INFO">Typing text 'testsKGLt' into text field 'id=password'</msg>
+<status status="PASS" starttime="20210314 13:48:19.440" endtime="20210314 13:48:19.782"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=verify</arg>
+<arg>test${CREATE_RANDOM_DATA}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:19.785" level="INFO">Typing text 'testsKGLt' into text field 'id=verify'</msg>
+<status status="PASS" starttime="20210314 13:48:19.783" endtime="20210314 13:48:20.014"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=email</arg>
+<arg>test${CREATE_RANDOM_DATA}@email.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:20.016" level="INFO">Typing text 'testsKGLt@email.com' into text field 'id=email'</msg>
+<status status="PASS" starttime="20210314 13:48:20.014" endtime="20210314 13:48:20.461"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>css=.btn</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20210314 13:48:20.463" level="INFO">Clicking element 'css=.btn'.</msg>
+<status status="PASS" starttime="20210314 13:48:20.461" endtime="20210314 13:48:20.992"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:25.993" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:20.992" endtime="20210314 13:48:25.993"/>
+</kw>
+<status status="PASS" starttime="20210314 13:48:18.466" endtime="20210314 13:48:25.994"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Savings</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:25.994" endtime="20210314 13:48:26.022"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Dashboard</arg>
+<arg>10s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20210314 13:48:26.023" endtime="20210314 13:48:26.038"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEST_SUITE_SECONDS_DELAY}s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210314 13:48:31.038" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210314 13:48:26.038" endtime="20210314 13:48:31.039"/>
+</kw>
+<tag>Android_Chrome</tag>
+<tag>Emulator_Android_Device</tag>
+<status status="PASS" starttime="20210314 13:48:18.465" endtime="20210314 13:48:31.040"/>
+</test>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20210314 13:48:31.042" endtime="20210314 13:48:31.148"/>
+</kw>
+<doc>Simple Android Chrome examples using AppiumLibrary.</doc>
+<status status="PASS" starttime="20210314 13:47:43.148" endtime="20210314 13:48:31.148"/>
+</suite>
+<status status="PASS" starttime="20210314 13:47:13.614" endtime="20210314 13:48:31.151"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">Android_Chrome</stat>
+<stat pass="3" fail="0" skip="0">Emulator_Android_Device</stat>
+<stat pass="3" fail="0" skip="0">IOS_Safari</stat>
+<stat pass="3" fail="0" skip="0">Simulator_IOS_Device</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Robot Framework Appium IOS And Android Mobile Browsers Test Run">Robot Framework Appium IOS And Android Mobile Browsers Test Run</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="IOS-Device-Safari-Examples">Robot Framework Appium IOS And Android Mobile Browsers Test Run.IOS-Device-Safari-Examples</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Android-Device-Chrome-Examples">Robot Framework Appium IOS And Android Mobile Browsers Test Run.Android-Device-Chrome-Examples</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
