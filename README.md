@@ -61,8 +61,12 @@ bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-I
 2. Workshop-Part-Two: PaBot, Charles Proxy, Graphwalker, and adb shell CPU usage monitoring workflows.
 ```
 >> Following commands need to run first before any other examples in Workshop-Part-Two. <<
+## The following two setup commands are only for the Charles Proxy examples.
 bash ./start-specific-appium-example-workflows-for-workshop.sh All-Appium-Tests-Teardown &&
 bash ./start-specific-appium-example-workflows-for-workshop.sh Appium-Charles-Proxy-Test-Setup
+## The following two setup commands are only for the PaBot Parallel IOS and Android device examples.
+bash ./start-specific-appium-example-workflows-for-workshop.sh All-Appium-Tests-Teardown &&
+bash ./start-specific-appium-example-workflows-for-workshop.sh Appium-No-Proxy-Test-Setup
 
 >> Each command runs a group of examples for Workshop-Part-Two. <<
 bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Charles-Proxy-IOS-And-Android-Mobile-Browsers-Test-Example
