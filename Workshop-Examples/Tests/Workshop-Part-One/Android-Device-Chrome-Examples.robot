@@ -13,16 +13,16 @@ ${TEST_SUITE_SECONDS_DELAY}    5
 
 *** Test Cases ***
 
-ANDROID CHROME TEST 1 - Open a Chrome browser using the URL set in the provided .env file then check the page.
+ANDROID CHROME TEST 1 : Open a Chrome browser using the URL set in the provided .env file then check the page.
     [Tags]    Android_Chrome    Emulator_Android_Device
     [Setup]   Open The Chrome Browser In Android
     Wait Until Page Contains    User    10s
 
-ANDROID CHROME TEST 2 - Tap the Sign Up link then check the page.
+ANDROID CHROME TEST 2 : Tap the Sign Up link then check the page.
     [Tags]    Android_Chrome    Emulator_Android_Device
     Swipe Down Tap The Sign Up Link And Check The Page
 
-ANDROID CHROME TEST 3 - Fill out the form click the Submit Button then check the page.
+ANDROID CHROME TEST 3 : Fill out the form click the Submit Button then check the page.
     [Tags]    Android_Chrome    Emulator_Android_Device
     Complete Form With Randomized Test Data
     Wait Until Page Contains    Savings    10s

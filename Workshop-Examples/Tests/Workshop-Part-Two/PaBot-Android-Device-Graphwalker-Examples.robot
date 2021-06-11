@@ -11,7 +11,7 @@ ${TEST_SUITE_SECONDS_DELAY}    5
 
 *** Test Cases ***
 
-PARALELL ANDROID APP GRAPHWALKER TEST - Run Android calculator app Graphwalker test, capture screenshots, and record video of the entire run.
+PARALELL ANDROID APP GRAPHWALKER TEST : Run Android calculator app Graphwalker test, capture screenshots, and record video of the entire run.
     [Tags]    Android_App    Emulator_Android_Device    Model_Based_Testing
     [Setup]   Open Existing Default Installed Android App
     Run Graphwalker Model Based Tests With Appium    AppiumGraphwalkerPath.csv

@@ -12,7 +12,7 @@ ${TEST_SUITE_SECONDS_DELAY}    4
 
 *** Test Cases ***
 
-IOS APP TEST 1 - Install the Wikipedia app on an IOS device and open it.
+IOS APP TEST 1 : Install the Wikipedia app on an IOS device and open it.
     [Tags]    IOS_App    Emulator_IOS_Device
     [Setup]   Open Existing Default Installed IOS App
     Wait Until Page Contains    Next    10s
@@ -20,26 +20,26 @@ IOS APP TEST 1 - Install the Wikipedia app on an IOS device and open it.
     Capture Page Screenshot
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
 
-IOS APP TEST 2 - Switch the IOS device to landscape back to portrait, then tap the Next button and check the app.
+IOS APP TEST 2 : Switch the IOS device to landscape back to portrait, then tap the Next button and check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Check Landscape Mode Take Screenshot Then Go Back To Portrait Mode
     Click Element    xpath=//XCUIElementTypeStaticText[@name="Next"]
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Capture Page Screenshot
 
-IOS APP TEST 3 - Tap the Next button on the second Wikipedia setup screen and check the app.
+IOS APP TEST 3 : Tap the Next button on the second Wikipedia setup screen and check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Click Element    xpath=//XCUIElementTypeStaticText[@name="Next"]
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Capture Page Screenshot
 
-IOS APP TEST 4 - Tap the Next button on the third Wikipedia setup screen and check the app.
+IOS APP TEST 4 : Tap the Next button on the third Wikipedia setup screen and check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Click Element    xpath=//XCUIElementTypeStaticText[@name="Next"]
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Capture Page Screenshot
 
-IOS APP TEST 5 - Tap the Get Started button on the last Wikipedia setup screen and check the app.
+IOS APP TEST 5 : Tap the Get Started button on the last Wikipedia setup screen and check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Click Element    xpath=//XCUIElementTypeStaticText[@name="Get started"]
@@ -50,7 +50,7 @@ IOS APP TEST 5 - Tap the Get Started button on the last Wikipedia setup screen a
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Capture Page Screenshot
 
-IOS APP TEST 6 - Tap the Search button and type in cat then check the app.
+IOS APP TEST 6 : Tap the Search button and type in cat then check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Tap According To Specific Cordinates    870    1320
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
@@ -62,7 +62,7 @@ IOS APP TEST 6 - Tap the Search button and type in cat then check the app.
     Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Capture Page Screenshot
 
-IOS APP TEST 7 - Delete cat from the Search Field and type in dog then check the app.
+IOS APP TEST 7 : Delete cat from the Search Field and type in dog then check the app.
     [Tags]    IOS_App    Emulator_IOS_Device
     Repeat Keyword    4 times    Tap According To Specific Cordinates    980    1040
     Input Value    accessibility_id=Search Wikipedia    dog

@@ -11,7 +11,7 @@ ${TEST_LOOP_ITERATIONS}    ${USER_DEFINED_IOS_TEST_ITERATIONS}
 
 *** Test Cases ***
 
-PARALELL IOS APP LOOP TEST - Run the IOS Wikipedia app tests in a loop while recording it and taking screenshots.
+PARALELL IOS APP LOOP TEST : Run the IOS Wikipedia app tests in a loop while recording it and taking screenshots.
     [Tags]    IOS_App    Parallel_Running_Tests    Emulator_IOS_Device
     [Setup]   Open Existing Default Installed IOS App
     Run IOS Wikipedia App Test Steps In A Loop    ${TEST_LOOP_ITERATIONS}

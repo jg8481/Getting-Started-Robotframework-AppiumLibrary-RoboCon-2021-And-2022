@@ -12,7 +12,7 @@ ${TEST_LOOP_ITERATIONS}    ${USER_DEFINED_MONITORING_ITERATIONS}
 
 *** Test Cases ***
 
-PARALELL ADB TOP MONITORING TEST - Run an adb shell command on a connected Android device to check that a specific package is installed.
+PARALELL ADB TOP MONITORING TEST : Run an adb shell command on a connected Android device to check that a specific package is installed.
     [Tags]    Android_Adb    Parallel_Running_Tests    Emulator_Android_Device
     Create Adb Shell Top Data Log Files
     Run Adb Shell Top Monitoring Test    ${TEST_LOOP_ITERATIONS}

@@ -13,7 +13,7 @@ ${CHARLES_PROXY_APPIUM_EXAMPLE_URL}    http://nodegoat.herokuapp.com/login
 
 *** Test Cases ***
 
-CHARLES PROXY ANDROID CHROME TEST - Go to the OWASP Node Goat home page in an Android mobile browser while Charles Proxy is recording a session, and check the JSON session file.
+CHARLES PROXY ANDROID CHROME TEST : Go to the OWASP Node Goat home page in an Android mobile browser while Charles Proxy is recording a session, and check the JSON session file.
     [Tags]    Android_Chrome    Charles_Proxy    Charles_Proxy_Android    Emulator_Android_Device
     [Setup]    Start Charles Proxy For Mobile Browser
     Open The Chrome Browser In Android After Starting Charles Proxy

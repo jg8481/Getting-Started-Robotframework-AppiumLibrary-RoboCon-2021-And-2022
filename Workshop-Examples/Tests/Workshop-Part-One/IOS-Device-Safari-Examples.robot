@@ -12,16 +12,16 @@ ${TEST_SUITE_SECONDS_DELAY}    5
 
 *** Test Cases ***
 
-IOS SAFARI TEST 1 - Open a Safari browser using the URL set in the provided .env file then check the page.
+IOS SAFARI TEST 1 : Open a Safari browser using the URL set in the provided .env file then check the page.
     [Tags]    IOS_Safari    Simulator_IOS_Device
     [Setup]   Open The Safari Browser In IOS
     Wait Until Page Contains    User    10s
 
-IOS SAFARI TEST 2 - Tap the Sign Up link then check the page.
+IOS SAFARI TEST 2 : Tap the Sign Up link then check the page.
     [Tags]    IOS_Safari    Simulator_IOS_Device
     Tap According To Specific Element Then Check Until Screen Shows Text    //a[@href="/signup"]    Submit
 
-IOS SAFARI TEST 3 - Fill out the form click the Submit Button then check the page.
+IOS SAFARI TEST 3 : Fill out the form click the Submit Button then check the page.
     [Tags]    IOS_Safari    Simulator_IOS_Device
     Complete Form With Randomized Test Data
     Wait Until Page Contains    Savings    10s
