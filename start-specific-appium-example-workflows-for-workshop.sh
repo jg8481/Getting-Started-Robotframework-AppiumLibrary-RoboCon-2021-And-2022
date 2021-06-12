@@ -86,7 +86,7 @@ if [ "$1" == "Robot-Framework-Parallel-IOS-Android-Tests" ]; then
   echo
   echo "------------------------------------[[[[ Robot Framework Mobile Device Parallel Test Example ]]]]------------------------------------"
   echo
-  echo "This will use PaBot, Robot Framework, and Appium run three different tests in parallel. Two different mobile device tests and an adb shell top monitoring test are running at the same time."
+  echo "This will use PaBot, Robot Framework, Graphwalker (model-based testing tool), and Appium to run three different tests in parallel. Two different mobile device tests and an adb shell top monitoring test are running at the same time."
   echo
   echo "ATTENTION: This example requires Python 3."
   echo
