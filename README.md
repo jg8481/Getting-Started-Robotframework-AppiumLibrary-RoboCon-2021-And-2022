@@ -10,6 +10,10 @@ Bonus Content: There are some possibly interesting extras in the repo that I did
 - Several adb shell + Robotframework-AppiumLibrary examples.
 - Some video capture examples.
 
+Updated Content: RoboCon 2022 Workshop...
+- There is now a new graph visualization feature added to the Android Monitoring example.
+- New GraphMakerExample.py library utlilizing Bokeh graphs.
+
 The following are the basic technical requirements to run the examples during the workshop.
 - Python 3 (this workshop was created using Python 3.9.2) -> https://www.python.org/downloads/
 - NodeJS 14 (this workshop was created using Node 14.16.0) -> https://nodejs.org/en/ or use https://github.com/nvm-sh/nvm

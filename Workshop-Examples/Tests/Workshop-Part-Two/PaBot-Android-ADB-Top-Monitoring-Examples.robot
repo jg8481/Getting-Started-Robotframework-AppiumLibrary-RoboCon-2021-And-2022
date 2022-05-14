@@ -2,13 +2,14 @@
 Documentation    Simple Android examples using AppiumLibrary and PaBot.
 
 Resource         ${EXECDIR}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//Appium-Mobile-Resources.robot
+Library         ${EXECDIR}//Workshop-Examples//Tests//Workshop-Part-Two//Resources//GraphMakerExample.py
 
 *** Variables ***
 
 ${PATH}    ${EXECDIR}
 ${TEST_SUITE_TIMEOUT}     5
 ${TEST_SUITE_SECONDS_DELAY}    5
-${TEST_LOOP_ITERATIONS}    ${USER_DEFINED_MONITORING_ITERATIONS}
+#${TEST_LOOP_ITERATIONS}    ${USER_DEFINED_MONITORING_ITERATIONS}
 
 *** Test Cases ***
 
@@ -17,6 +18,10 @@ PARALELL ADB TOP MONITORING TEST : Run an adb shell command on a connected Andro
     Create Adb Shell Top Data Log Files
     Run Adb Shell Top Monitoring Test    ${TEST_LOOP_ITERATIONS}
     Display CPU Checkpoints Status And Insert Android Top Data Into Results Log
+
+TEST METRICS VISUALIZATION : Gather mobile device memory usage data and graph it.
+    [Tags]    Android_Adb    Parallel_Running_Tests    Emulator_Android_Device    Performance_Graph
+    Gather Mobile Device Memory Usage Data And Create Memory Usage Graph
 
 *** Keywords ***
 
@@ -75,3 +80,9 @@ Run Adb Shell Top Command And Return Output
     Run Process    adb shell ${ADB_SHELL_TOP_COMMAND}    alias=adb_shell_top_result    shell=True    timeout=2min    on_timeout=continue
     ${ADB_SHELL_TOP_RESULTS}=   	Get Process Result    adb_shell_top_result    stdout=true
     [Return]    ${ADB_SHELL_TOP_RESULTS}
+
+Gather Mobile Device Memory Usage Data And Create Memory Usage Graph
+    Set Suite Variable    ${MEMORY_DATA_DIRECTORY}    ${PATH}//Workshop-Examples//Results//Android-CPU-Memory-Usage-Logs
+    Set Suite Variable    ${RESOURCES_DIRECTORY}    ${PATH}//Workshop-Examples//Tests//Workshop-Part-Two//Resources
+    Run Keyword And Ignore Error    Run    echo "Mobile_Device_Memory_Usage,Elapsed_Time" > ${RESOURCES_DIRECTORY}//mobile-device-memory-usage-graph.csv && cat ${MEMORY_DATA_DIRECTORY}//android-adb-top-cpu-memory-usage-data-log.txt | awk '{print $10,$11}' | sed 1d | sed 1d | tr ' ' ',' | tr ':' '0' >> ${RESOURCES_DIRECTORY}//mobile-device-memory-usage-graph.csv
+    Create Mobile Device Memory Usage Graph
