@@ -4,15 +4,15 @@
 
 This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021) contains all of the examples that will be covered in the ["Getting started with the Robotframework-AppiumLibrary" online workshop (click here to watch a walkthrough on YouTube)](https://www.youtube.com/watch?v=lYHHIuNldM4). The core audience for this workshop are beginners but there's also content mentioned below that could be interesting to more advanced testers as well. A lot of the examples kept in this repo were heavily influenced by the [Robot-Framework-Lone-Tester-Strategies-RoboCon-2019](https://github.com/jg8481/Robot-Framework-Lone-Tester-Strategies-RoboCon-2019) and [Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019](https://github.com/jg8481/Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019) work and experiments I have done in the past. More information about this RoboCon 2021 workshop can be found here... https://robocon.io/#workshops
 
-Bonus Content: There are some possibly interesting extras in the repo that I did not mention in the original workshop bio. They are...
+**Bonus Content:** There are some possibly interesting extras in the repo that I did not mention in the original workshop bio. They are...
 - Parallel running Appium + Grahpwalker example (written in a single `.robot` file) uing PaBot.
 - Parallel running Android adb shell CPU monitoring example using PaBot and the top Linux CLI tool.
 - Several adb shell + Robotframework-AppiumLibrary examples.
 - Some video capture examples.
 
-Updated Content: RoboCon 2022 Workshop...
+**Updated Content:** Everything in this repo will be used in the [Getting started with the Robotframework-AppiumLibrary - RoboCon 2021 Workshop](https://docs.google.com/presentation/d/1Ryy7e79WLZQFNhq4zuFPMGVTwyPb3Vd9/edit?usp=sharing&ouid=114159940647810230768&rtpof=true&sd=true), and will be combined with the following...
 - There is now a new graph visualization feature added to the Android Monitoring example.
-- New GraphMakerExample.py library utlilizing Bokeh graphs.
+- New [GraphMakerExample.py](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021/blob/main/Workshop-Examples/Tests/Workshop-Part-Two/Resources/GraphMakerExample.py) library utlilizing Bokeh graphs.
 
 The following are the basic technical requirements to run the examples during the workshop.
 - Python 3 (this workshop was created using Python 3.9.2) -> https://www.python.org/downloads/
