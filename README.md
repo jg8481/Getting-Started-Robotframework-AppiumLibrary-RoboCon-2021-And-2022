@@ -10,7 +10,7 @@ This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibra
 - Several adb shell + Robotframework-AppiumLibrary examples.
 - Some video capture examples.
 
-**Updated Content:** Everything in this repo will be used in the [Getting started with the Robotframework-AppiumLibrary - RoboCon 2021 Workshop](https://docs.google.com/presentation/d/1Ryy7e79WLZQFNhq4zuFPMGVTwyPb3Vd9/edit?usp=sharing&ouid=114159940647810230768&rtpof=true&sd=true), and will be combined with the following...
+**Updated Content:** Everything in this repo will be used in the [Getting started with the Robotframework-AppiumLibrary - RoboCon 2022 In-person Workshop](https://docs.google.com/presentation/d/1Ryy7e79WLZQFNhq4zuFPMGVTwyPb3Vd9/edit?usp=sharing&ouid=114159940647810230768&rtpof=true&sd=true), and will be combined with the following...
 - There is now a new graph visualization feature added to the Android Monitoring example.
 - New [GraphMakerExample.py](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021/blob/main/Workshop-Examples/Tests/Workshop-Part-Two/Resources/GraphMakerExample.py) library utlilizing Bokeh graphs.
 
