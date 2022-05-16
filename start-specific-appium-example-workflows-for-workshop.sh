@@ -99,6 +99,7 @@ if [ "$1" == "Robot-Framework-Parallel-IOS-Android-Tests" ]; then
   pabot --verbose --variable USER_DEFINED_MONITORING_ITERATIONS:350 --variable USER_DEFINED_IOS_TEST_ITERATIONS:2 --report NONE --log appium-ios-android-monitoring-pabot-test-runs-log.html --output appium-ios-android-monitoring-pabot-test-runs-output.xml -N "Appium Run" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-IOS*.robot ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-*.robot
   #pabot --variable USER_DEFINED_MONITORING_ITERATIONS:"$2" --variable USER_DEFINED_IOS_TEST_ITERATIONS:"$3" --report NONE --log appium-ios-android-monitoring-pabot-test-runs-log.html --output appium-ios-android-monitoring-pabot-test-runs-output.xml -N "Appium Run" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-IOS*.robot ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-*.robot
   #robot --variable USER_DEFINED_MONITORING_ITERATIONS:"$2" --report NONE --log appium-ios-android-pabot-test-runs-log.html --output appium-ios-android-pabot-test-runs-output.xml -N "Appium Run" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-A*.robot
+  robot --include "Performance_Graph" --report NONE --log measure-memory-usage.html --output measure-memory-usage.xml -N "Memory Usage" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-A*.robot > /dev/null 2>&1
   exit
 fi
 
@@ -253,6 +254,19 @@ if [ "$1" == "All-Appium-Tests-Teardown" ]; then
   echo "Run the following if you are not sure... ps -A | grep appium"
   echo
   ps -A | grep appium
+fi
+
+if [ "$1" == "Gather-Mobile-Device-Memory-Data-And-Create-Visual-Graph" ]; then
+  # Before running this step you need to manually create your own ".env" file using the provided "template.env" file.
+  source ./.env
+  echo
+  echo
+  pip3 install virtualenv --user --force-reinstall > /dev/null 2>&1
+  virtualenv -p python3 venv > /dev/null 2>&1
+  source venv/bin/activate
+  pip3 install -r ./Workshop-Examples/Tests/Workshop-Part-One/Resources/requirements.txt > /dev/null 2>&1
+  robot --include "Performance_Graph" --report NONE --log measure-memory-usage.html --output measure-memory-usage.xml -N "Memory Usage" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-A*.robot > /dev/null 2>&1
+  exit
 fi
 
 usage_explanation() {

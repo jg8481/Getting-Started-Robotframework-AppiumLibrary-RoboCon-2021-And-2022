@@ -13,6 +13,8 @@ This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibra
 **Updated Content:** Everything in this repo will be used in the [Getting started with the Robotframework-AppiumLibrary - RoboCon 2022 In-person Workshop](https://docs.google.com/presentation/d/1Ryy7e79WLZQFNhq4zuFPMGVTwyPb3Vd9/edit?usp=sharing&ouid=114159940647810230768&rtpof=true&sd=true), and will be combined with the following...
 - There is now a new graph visualization feature added to the Android Monitoring example.
 - New [GraphMakerExample.py](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021/blob/main/Workshop-Examples/Tests/Workshop-Part-Two/Resources/GraphMakerExample.py) library utlilizing Bokeh graphs.
+  - After running the `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests` command a memory usage graph is generated.
+  - The new graph visualization feature can also run in standalone mode using this command `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests`, but it needs to run after the `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests` command has finished running at least once.
 
 The following are the basic technical requirements to run the examples during the workshop.
 - Python 3 (this workshop was created using Python 3.9.2) -> https://www.python.org/downloads/
