@@ -1,4 +1,4 @@
-# Getting started with the Robotframework-AppiumLibrary - RoboCon 2021 Workshop
+# Getting started with the Robotframework-AppiumLibrary - RoboCon 2021 and 2022 Workshops
 
 ## General Information
 
