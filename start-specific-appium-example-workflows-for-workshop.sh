@@ -264,8 +264,8 @@ if [ "$1" == "Gather-Mobile-Device-Memory-Data-And-Create-Visual-Graph" ]; then
   pip3 install virtualenv --user --force-reinstall > /dev/null 2>&1
   virtualenv -p python3 venv > /dev/null 2>&1
   source venv/bin/activate
-  pip3 install -r ./Workshop-Examples/Tests/Workshop-Part-One/Resources/requirements.txt > /dev/null 2>&1
-  robot --include "Performance_Graph" --report NONE --log measure-memory-usage.html --output measure-memory-usage.xml -N "Memory Usage" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-A*.robot > /dev/null 2>&1
+  pip3 install -r ./Workshop-Examples/Tests/Workshop-Part-Two/Resources/requirements.txt > /dev/null 2>&1
+  robot --include "Performance_Graph" --report NONE --log measure-memory-usage.html --output measure-memory-usage.xml -N "Memory Usage" -d ./Workshop-Examples/Results/Parallel-IOS-Android-Test-Runs ./Workshop-Examples/Tests/Workshop-Part-Two/PaBot-Android-A*.robot
   exit
 fi
 

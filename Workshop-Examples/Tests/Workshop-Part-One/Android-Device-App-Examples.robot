@@ -136,6 +136,10 @@ ANDROID APP TEST 16 : Tap the search field and search for dog on Wikipedia.
     Run Keyword And Continue On Failure    Sleep    ${TEST_SUITE_SECONDS_DELAY}s
     Run Keyword And Continue On Failure    Stop Screen Recording
 
+ANDROID APP TEST 17 : Install the Wikipedia app on a real Android device.
+    [Tags]    Real_Android_Device
+    Install And Open New Android App On Real Devices
+
 *** Keywords ***
 
 Run PS Command In Adb Shell And Check Process Status
