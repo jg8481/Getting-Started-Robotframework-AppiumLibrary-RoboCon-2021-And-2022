@@ -2,7 +2,7 @@
 
 ## General Information
 
-This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021) contains all of the examples that will be covered in the ["Getting started with the Robotframework-AppiumLibrary" online workshop (click here to watch a walkthrough on YouTube)](https://www.youtube.com/watch?v=lYHHIuNldM4). The core audience for this workshop are beginners but there's also content mentioned below that could be interesting to more advanced testers as well. A lot of the examples kept in this repo were heavily influenced by the [Robot-Framework-Lone-Tester-Strategies-RoboCon-2019](https://github.com/jg8481/Robot-Framework-Lone-Tester-Strategies-RoboCon-2019) and [Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019](https://github.com/jg8481/Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019) work and experiments I have done in the past. More information about this RoboCon 2021 workshop can be found here... https://robocon.io/#workshops
+This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021-And-2022) contains all of the examples that will be covered in the ["Getting started with the Robotframework-AppiumLibrary" online workshop (click here to watch a walkthrough on YouTube)](https://www.youtube.com/watch?v=lYHHIuNldM4). The core audience for this workshop are beginners but there's also content mentioned below that could be interesting to more advanced testers as well. A lot of the examples kept in this repo were heavily influenced by the [Robot-Framework-Lone-Tester-Strategies-RoboCon-2019](https://github.com/jg8481/Robot-Framework-Lone-Tester-Strategies-RoboCon-2019) and [Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019](https://github.com/jg8481/Tool-Strategies-Lone-Testers-Test-Leadership-Congress-2019) work and experiments I have done in the past. More information about this RoboCon 2021 workshop can be found here... https://robocon.io/#workshops
 
 **Bonus Content:** There are some possibly interesting extras in the repo that I did not mention in the original workshop bio. They are...
 - Parallel running Appium + Grahpwalker example (written in a single `.robot` file) uing PaBot.
@@ -14,7 +14,7 @@ This [repo](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibra
 - There is a new real Android device app installation test that was demonstrated at the In-person Workshop. Before running this test, you need to set up a real Android device connected by USB and listed by the `adb devices` command.
   - This command runs the app installation test, `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Android-Apps-And-Adb-Tests Robot-Framework-Android-Apps-And-Adb-Tests`.    
 - There is now a new graph visualization feature added to the Android Monitoring example.
-- New [GraphMakerExample.py](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021/blob/main/Workshop-Examples/Tests/Workshop-Part-Two/Resources/GraphMakerExample.py) library utlilizing Bokeh graphs.
+- New [GraphMakerExample.py](https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021-And-2022/blob/main/Workshop-Examples/Tests/Workshop-Part-Two/Resources/GraphMakerExample.py) library utlilizing Bokeh graphs.
   - After running the `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests` command a memory usage graph is generated.
   - The new graph visualization feature can also run in standalone mode using this command `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests`, but it needs to run after the `bash ./start-specific-appium-example-workflows-for-workshop.sh Robot-Framework-Parallel-IOS-Android-Tests` command has finished running at least once.
 
@@ -37,7 +37,7 @@ The following are the basic technical requirements to run the examples during th
 
 After installing the basic technical requirements on your machine (depending on the OS: Windows, MacOS, Linux etc.) please run the following on your machine.
 ```
-git clone https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021.git
+git clone https://github.com/jg8481/Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021-And-2022.git
 cd ./Getting-Started-Robotframework-AppiumLibrary-RoboCon-2021
 ```
 Set up an `.env` file using the provided `template.env` file.
